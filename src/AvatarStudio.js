@@ -1,19 +1,12 @@
 
-import { Image, Image2 } from './layout/Image';
+import { AppProvider } from './context/AppProvider';
+import { AppRouter } from './router/AppRouter';
 
 function AvatarStudio() {
   return (
-    <div className="App"
-      style={{
-        display: 'flex', alignItems: 'center', justifyContent: 'center'
-      }}>
-
-      <Image />
-      <Image2 />
-
-
-
-    </div>
+    <AppProvider>
+      <AppRouter />
+    </AppProvider>
   );
 }
 

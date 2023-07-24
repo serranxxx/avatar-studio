@@ -1,12 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import AvatarStudio from './AvatarStudio';
+import { BrowserRouter } from 'react-router-dom';
 import './styles'
-import { AvatarStudio } from './AvatarStudio'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  <BrowserRouter>
     <AvatarStudio />
-  </React.StrictMode>
+  </BrowserRouter>
 );
 
