@@ -13,11 +13,11 @@ code {
 }
 
 .scrollable-div {
-  max-width: 53vw;
+  max-width: 60vw;
   overflow: auto;
   overflow-y: auto;
   overflow-x: auto;
-  padding-left: 2%;
+  /* padding-left: 2%; */
 }
 
 .scrollable-div::-webkit-scrollbar {

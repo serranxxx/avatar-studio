@@ -22,7 +22,10 @@ export const Propierties = (props) => {
                                     propiertie : props.type === 'background'
                                         ? propiertie : props.type === 'clothes'
                                             ? propiertie : props.type === 'hair'
-                                                ? '#f3f3f3' : skin} `,
+                                                ? '#f3f3f3' : props.type === 'glasses' ?
+                                                    '#f3f3f3' : props.type === 'hats' ?
+                                                        '#f3f3f3' : props.type === 'beard' ?
+                                                            '#f3f3f3' : skin} `,
 
                             marginRight: '1vh', border: '4px solid #fff', marginLeft: '1vh'
                         }}>
@@ -37,7 +40,7 @@ export const Propierties = (props) => {
 
                                         : <img style={{
                                             width: '110%',
-                                            paddingTop:'1%', paddingBottom:'1%'
+                                            paddingTop: '1%', paddingBottom: '1%'
                                         }} src={propiertie} />
                         }
 
