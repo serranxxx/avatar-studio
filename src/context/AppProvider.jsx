@@ -2,14 +2,34 @@ import { useReducer } from "react";
 import { types } from "./types";
 import { AppReducer } from "./appReducer";
 import { appContext } from "./appContext";
+import { RandomColor, RandomFace, RandomGlasses, RandomHair, RandomHats, RandomMoustache, RandomSkin } from "../layout/hooks/Randomizer";
 
 
 const init = () => {
 
+    let Data = JSON.parse(localStorage.getItem('MyAvatars'))
+    if (!Data) {
+        Data = [{
+            id: '1234',
+            name: 'Example Avatar',
+            description: '',
+            skin: RandomSkin(Math.floor(Math.random() * 8) + 1),
+            face: RandomFace(Math.floor(Math.random() * 3) + 1),
+            hair: RandomHair(Math.floor(Math.random() * 4) + 1),
+            hairColor: RandomColor(),
+            glasses: RandomGlasses(Math.floor(Math.random() * 8) + 1),
+            beard: RandomMoustache(Math.floor(Math.random() * 5) + 1),
+            beardColor: RandomColor(),
+            hat: RandomHats(Math.floor(Math.random() * 7) + 1),
+            clothes: RandomColor(),
+            background: RandomColor()
+        }]
+    }
 
     return {
-        skin: '#ffb79e',
-        background: '#f3f3f3'
+        skin: RandomSkin(Math.floor(Math.random() * 8) + 1),
+        background: '#f3f3f3',
+        data: Data
     }
 }
 
@@ -39,6 +59,16 @@ export const AppProvider = ({ children }) => {
         dispatch(action)
     }
 
+    const newData = (data) => {
+        const Data = data
+        const action = {
+            type: types.getData,
+            payload: Data
+        }
+        localStorage.setItem('MyAvatars', JSON.stringify(Data))
+        dispatch(action)
+    }
+
 
 
 
@@ -48,7 +78,8 @@ export const AppProvider = ({ children }) => {
         <appContext.Provider value={{
             ...state,
             newSkin,
-            newBackground
+            newBackground,
+            newData
         }}>
             {children}
         </appContext.Provider >

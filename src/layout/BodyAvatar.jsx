@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { beards, faces, glasses, hairs, hats } from './body_parts'
+import { beards, faces, glasses, hairs, hats } from './hooks/body_parts'
 import { Button } from 'antd'
 
 export const BodyAvatar = (props) => {

@@ -16,6 +16,12 @@ export const AppReducer = (state = {}, action) => {
                 ...state,
                 background: action.payload
             }
+
+        case types.getData:
+            return {
+                ...state,
+                data: action.payload
+            }
         default:
             break;
     }
