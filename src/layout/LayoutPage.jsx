@@ -236,8 +236,8 @@ export const LayoutPage = () => {
                     </div>
 
                     <div style={{
-                        width: 'auto', height: '10%',
-                        position: 'absolute', top: '10vh', display: 'flex',
+                        width: '60%', height: '10%',
+                        position: 'absolute', top: '10vh', display: 'flex', flexWrap: 'wrap',
                         alignItems: 'center', justifyContent: 'center', flexDirection: 'row'
                     }}>
                         <Button
@@ -294,15 +294,25 @@ export const LayoutPage = () => {
                         </Link>
 
                     </div>
-                    
+
 
                     <Tabs
-                        
+                        className='tab-big'
                         style={{
                             position: 'absolute', bottom: '8vh', fontWeight: 500,
                         }}
                         tabBarStyle={{
-                            display:'flex',width:'40vw', fontWeight:500
+                            width: 'auto',
+                        }}
+                        defaultActiveKey="1" items={items} onChange={onChange} />
+
+                    <Tabs
+                        className='tab-lil'
+                        style={{
+                            position: 'absolute', bottom: '8vh', fontWeight: 500,
+                        }}
+                        tabBarStyle={{
+                             width: '80vw',
                         }}
                         defaultActiveKey="1" items={items} onChange={onChange} />
                 </div>
