@@ -1,5 +1,5 @@
 import { Button } from 'antd'
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link, } from 'react-router-dom'
 import { AvatarCard } from './AvatarCard'
 import { appContext } from '../context/appContext'
@@ -9,6 +9,9 @@ export const MyAvatars = () => {
 
     // const { data } = useContext(appContext)
     const data = JSON.parse(localStorage.getItem('MyAvatars'))
+    const [color, setColor] = useState(RandomColor())
+
+
     return (
         <>
             <div style={{
@@ -18,11 +21,12 @@ export const MyAvatars = () => {
                 <Link to="/avatar-studio/create-avatar">
                     <Button
                         className='avatar'
+                        onMouseEnter={() => setColor(RandomColor())}
                         style={{
-                            backgroundColor: `${RandomColor()}80`,
-                            width: '30vh', borderRadius: '2vh',
-                            height: '40%', border: '0px solid #000', fontWeight: 500,
-                            color: '#fff', transition: 'all 0.45s ease-in-out',
+                            backgroundColor: `${color}80`,
+                            width: '30vh', borderRadius: '1vh',
+                            height: '7vh', border: '0px solid #000', fontWeight: 500,
+                            color: '#fff', transition: 'all 0.25s ease-in-out',
                         }}>Create new avatar</Button>
                 </Link>
             </div>

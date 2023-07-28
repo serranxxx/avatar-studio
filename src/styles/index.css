@@ -15,7 +15,7 @@ code {
 }
 
 .scrollable-div {
-  max-width: 60vw;
+  max-width: 80vw;
   overflow: auto;
   overflow-y: auto;
   overflow-x: auto;

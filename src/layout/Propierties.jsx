@@ -16,7 +16,7 @@ export const Propierties = (props) => {
                         onClick={() => props.action(propiertie)}
                         key={propiertie}
                         style={{
-                            height: '10vh', aspectRatio: '1/1', borderRadius: '2vh',
+                            height: '8vh', aspectRatio: '1/1', borderRadius: '2vh',
                             backgroundColor:
                                 `${props.type === 'skin' ?
                                     propiertie : props.type === 'background'

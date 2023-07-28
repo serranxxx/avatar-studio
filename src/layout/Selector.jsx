@@ -34,7 +34,9 @@ export const Selector = (props) => {
 
 
     return (
-        <>
+        <div style={{
+            display:'flex', alignItems:'center', justifyContent:'center',
+        }}>
             <div
                 className='scrollable-div'
                 style={{
@@ -65,6 +67,6 @@ export const Selector = (props) => {
 
 
             </div>
-        </>
+        </div>
     )
 }

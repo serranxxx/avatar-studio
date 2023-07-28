@@ -15,6 +15,7 @@ import { Link } from 'react-router-dom';
 export const LayoutPage = () => {
 
 
+
     const { data } = useContext(appContext)
     const [form] = Form.useForm()
     const [visible, setVisible] = useState(false)
@@ -193,7 +194,17 @@ export const LayoutPage = () => {
     useEffect(() => {
         newData(avatar)
     }, [avatar])
-    
+
+    useEffect(() => {
+        const changeBody = () => {
+            document.body.style.background = `radial-gradient(at 50% 50%, rgba(255, 255, 255, 20%), ${background}80)`;
+        }
+
+        changeBody()
+
+    }, [background])
+
+
 
 
     return (
@@ -225,23 +236,26 @@ export const LayoutPage = () => {
                     </div>
 
                     <div style={{
-                        width: '80vw', height: '10%',
+                        width: 'auto', height: '10%',
                         position: 'absolute', top: '10vh', display: 'flex',
                         alignItems: 'center', justifyContent: 'center', flexDirection: 'row'
                     }}>
                         <Button
                             onClick={newAvatar}
                             style={{
-                                borderRadius: '2vh 0 0 2vh', width: '20vh',
+                                borderRadius: '2vh 0 0 2vh', width: '15vh',
                                 border: '1.6px solid #000', fontWeight: 500,
                                 backgroundColor: `${background}70`
                             }}>New avatar</Button>
 
-                        <Link to="/avatar-studio/my-avatars">
+                        <Link to="/avatar-studio/my-avatars"
+                            style={{
+                                width: '15vh', marginLeft: '0.5vh'
+                            }}>
                             <Button
                                 style={{
                                     borderRadius: '0 0 0 0', fontWeight: 500, backgroundColor: 'red',
-                                    border: '1.6px solid #000', marginLeft: '0.5vh', width: '20vh',
+                                    border: '1.6px solid #000', width: '100%',
                                     backgroundColor: `${background}70`
                                 }}>My avatars</Button>
                         </Link>
@@ -252,7 +266,7 @@ export const LayoutPage = () => {
                             icon={<AiFillSave size={20} />}
                             style={{
                                 // position: 'absolute', right: '2vh',
-                                marginLeft: '0.5vh', width: '5vh', borderRadius: '0',
+                                marginLeft: '0.5vh', width: '10vh', borderRadius: '0',
                                 border: '1.6px solid #000', backgroundColor: `${background}70`
                             }} />
 
@@ -262,27 +276,33 @@ export const LayoutPage = () => {
                             onClick={getRandomAvatar}
                             style={{
                                 // position: 'absolute', right: '2vh',
-                                marginLeft: '0.5vh', width: '7vh', borderRadius: '0',
+                                marginLeft: '0.5vh', width: '10vh', borderRadius: '0',
                                 border: '1.6px solid #000', backgroundColor: `${background}70`
                             }} />
 
-                        <Button
+                        <Link to="/avatar-studio/login" style={{
+                            width: '10vh', marginLeft: '0.5vh'
+                        }}>
+                            <Button
+                                icon={<HiLogout size={20} />}
+                                style={{
+                                    // position: 'absolute', right: '2vh',
+                                    width: '100%', borderRadius: '0 2vh 2vh 0',
+                                    border: '1.6px solid #000', backgroundColor: `${background}70`
+                                }} />
 
-                            icon={<HiLogout size={20} />}
-                            style={{
-                                // position: 'absolute', right: '2vh',
-                                width: '6vh',
-                                marginLeft: '0.5vh', borderRadius: '0 2vh 2vh 0',
-                                border: '1.6px solid #000', backgroundColor: `${background}70`
-                            }} />
+                        </Link>
+
                     </div>
+                    
 
                     <Tabs
-                        // className='scrollable-div'
+                        
                         style={{
-                            width: 'auto', height: 'auto',
                             position: 'absolute', bottom: '8vh', fontWeight: 500,
-                            display: 'flex', alignItems: 'center', justifyContent: 'center'
+                        }}
+                        tabBarStyle={{
+                            display:'flex',width:'40vw', fontWeight:500
                         }}
                         defaultActiveKey="1" items={items} onChange={onChange} />
                 </div>

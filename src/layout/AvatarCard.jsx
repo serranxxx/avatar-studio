@@ -47,13 +47,6 @@ export const AvatarCard = (props) => {
                                     backgroundColor: 'transparent',
                                     display: 'flex', alignItems: 'center', justifyContent: 'center'
                                 }}>
-                                    {/* <p style={{
-                                        width:'60%', marginLeft:'3%', bottom:'-4vh',
-                                        color:avatar.background,
-                                        fontWeight:700, fontSize:'5vh', position:'absolute'
-                                    }}>
-                                        {avatar.name}
-                                    </p> */}
 
                                     <Button
                                         type='ghost'
