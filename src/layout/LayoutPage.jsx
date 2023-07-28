@@ -244,13 +244,13 @@ export const LayoutPage = () => {
                             onClick={newAvatar}
                             style={{
                                 borderRadius: '2vh 0 0 2vh', width: '15vh',
-                                border: '1.6px solid #000', fontWeight: 500,
+                                border: '1.6px solid #000', fontWeight: 500, marginBottom:'1vh',
                                 backgroundColor: `${background}70`
                             }}>New avatar</Button>
 
                         <Link to="/avatar-studio/my-avatars"
                             style={{
-                                width: '15vh', marginLeft: '0.5vh'
+                                width: '15vh', marginLeft: '0.5vh', marginBottom:'1vh',
                             }}>
                             <Button
                                 style={{
@@ -266,7 +266,7 @@ export const LayoutPage = () => {
                             icon={<AiFillSave size={20} />}
                             style={{
                                 // position: 'absolute', right: '2vh',
-                                marginLeft: '0.5vh', width: '10vh', borderRadius: '0',
+                                marginLeft: '0.5vh', width: '10vh', borderRadius: '0', marginBottom:'1vh',
                                 border: '1.6px solid #000', backgroundColor: `${background}70`
                             }} />
 
@@ -276,12 +276,12 @@ export const LayoutPage = () => {
                             onClick={getRandomAvatar}
                             style={{
                                 // position: 'absolute', right: '2vh',
-                                marginLeft: '0.5vh', width: '10vh', borderRadius: '0',
+                                marginLeft: '0.5vh', width: '10vh', borderRadius: '0',marginBottom:'1vh',
                                 border: '1.6px solid #000', backgroundColor: `${background}70`
                             }} />
 
                         <Link to="/avatar-studio/login" style={{
-                            width: '10vh', marginLeft: '0.5vh'
+                            width: '10vh', marginLeft: '0.5vh',marginBottom:'1vh',
                         }}>
                             <Button
                                 icon={<HiLogout size={20} />}
