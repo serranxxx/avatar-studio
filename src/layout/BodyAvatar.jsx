@@ -15,7 +15,7 @@ export const BodyAvatar = (props) => {
             <svg
                 style={{
                     fill: `${props.clothe}`, width: '80%',
-                    transition: 'all 0.45s ease-in-out',
+                    // transition: 'all 0.45s ease-in-out',
                     // marginBottom: '100px'
                     // padding: '5%', marginTop: '0vh'
                 }}
