@@ -12,7 +12,6 @@ const init = () => {
         Data = [{
             id: '1234',
             name: 'Example Avatar',
-            description: '',
             skin: RandomSkin(Math.floor(Math.random() * 8) + 1),
             face: RandomFace(Math.floor(Math.random() * 3) + 1),
             hair: RandomHair(Math.floor(Math.random() * 4) + 1),
@@ -22,13 +21,14 @@ const init = () => {
             beardColor: RandomColor(),
             hat: RandomHats(Math.floor(Math.random() * 7) + 1),
             clothes: RandomColor(),
-            background: RandomColor()
+            background: RandomColor(),
+            favorite: false
         }]
     }
 
     return {
         skin: RandomSkin(Math.floor(Math.random() * 8) + 1),
-        background: '#f3f3f3',
+        background: '#bcdde6',
         data: Data
     }
 }
@@ -55,7 +55,7 @@ export const AppProvider = ({ children }) => {
             type: types.setBackground,
             payload: background
         }
-        // localStorage.setItem('items', JSON.stringify(allItems))
+        localStorage.setItem('avatar-background', JSON.stringify(background))
         dispatch(action)
     }
 

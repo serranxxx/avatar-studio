@@ -1,8 +1,12 @@
 
-import { Button } from 'antd'
+
 import { BodyAvatar, HeadAvatar } from './BodyAvatar'
+import { AiFillStar, AiOutlineStar, AiFillDelete } from "react-icons/ai";
+
 
 export const AvatarCard = (props) => {
+
+
 
 
     return (
@@ -42,29 +46,60 @@ export const AvatarCard = (props) => {
                                 <BodyAvatar clothe={avatar.clothes} />
 
                                 <div style={{
-                                    width: '90%', height: '15%',
+                                    width: '90%', height: '18%',
                                     position: 'absolute', bottom: '0vh', borderRadius: '2vh',
-                                    backgroundColor: 'transparent',
+                                    backgroundColor: 'transparent', flexWrap: 'wrap',
                                     display: 'flex', alignItems: 'center', justifyContent: 'center'
                                 }}>
+                                    <p style={{
+                                        color: '#ffffff99', fontWeight: 500,
+                                        fontSize: '3vh', cursor: 'default'
+                                    }}>
+                                        {avatar.name}
+                                    </p>
+                                    {
+                                        !avatar.favorite
+                                            ? <AiOutlineStar
+                                                className='icon-fav'
+                                                size={25}
+                                                onClick={() => props.makeFavorite(avatar.id)}
+                                                style={{
+                                                    marginLeft: '2vh', cursor: 'pointer',
+                                                    color: '#ffffff99', fontWeight: 500,
+                                                    transition: 'all 0.25s ease-in-out',
+                                                }} />
+                                            : <AiFillStar
+                                                className='icon-fav'
+                                                size={25}
+                                                onClick={() => props.makeFavorite(avatar.id)}
+                                                style={{
+                                                    marginLeft: '2vh', cursor: 'pointer',
+                                                    color: '#f0c36a99', fontWeight: 500,
+                                                    transition: 'all 0.25s ease-in-out',
+                                                }} />
+                                    }
 
-                                    <Button
-                                        type='ghost'
+                                    {/* <BiSolidDownload
+                                        size={25}
+                                        className='icon-download'
+                                        onClick={handleDownload}
                                         style={{
+                                            marginLeft: '1vh', cursor: 'pointer',
                                             color: '#ffffff99', fontWeight: 500,
-                                            backgroundColor: '#ffffff60',
-                                        }}>
-                                        Delete
-                                    </Button>
-                                    <Button
-                                        type='ghost'
+                                            transition: 'all 0.25s ease-in-out',
+
+
+                                        }} /> */}
+
+                                    <AiFillDelete
+                                        className='icon-delete'
+                                        onClick={() => props.deleteAvatar(avatar.id)}
+                                        size={25}
                                         style={{
-                                            marginLeft: '1vh',
+                                            marginLeft: '1vh', cursor: 'pointer',
                                             color: '#ffffff99', fontWeight: 500,
-                                            backgroundColor: '#ffffff60',
-                                        }}>
-                                        Download
-                                    </Button>
+                                            transition: 'all 0.25s ease-in-out',
+                                        }} />
 
                                 </div>
                             </div>

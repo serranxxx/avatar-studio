@@ -8,6 +8,8 @@ import { appContext } from '../context/appContext';
 import { HiLogout } from "react-icons/hi";
 import { ImShuffle } from "react-icons/im";
 import { AiFillSave } from "react-icons/ai";
+import { AiOutlineUserAdd } from "react-icons/ai";
+import { PiUsersThreeFill } from "react-icons/pi";
 import { RandomColor, RandomFace, RandomGlasses, RandomHair, RandomHats, RandomMoustache, RandomSkin } from './hooks/Randomizer';
 import TextArea from 'antd/es/input/TextArea';
 import { Link } from 'react-router-dom';
@@ -23,7 +25,7 @@ export const LayoutPage = () => {
     const { newSkin, newBackground, newData } = useContext(appContext)
     const [Face, setFace] = useState(faces.face_1)
     const [skin, setSkin] = useState(RandomSkin(Math.floor(Math.random() * 8) + 1))
-    const [background, setBackground] = useState('#f3f3f3')
+    const [background, setBackground] = useState('#bcdde6')
     const [clothe, setClothe] = useState('#ddd')
     const [Hair, setHair] = useState(hairs.hair_0)
     const [hairColor, setHairColor] = useState('#995c30')
@@ -149,7 +151,7 @@ export const LayoutPage = () => {
         setBackground(RandomColor())
 
         newSkin(skin)
-        newBackground(background)
+        // newBackground(background)
     }
 
     const newAvatar = () => {
@@ -162,10 +164,10 @@ export const LayoutPage = () => {
         setBeardColor('#995c30')
         setHat(hats.hat_0)
         setClothe('#ddd')
-        setBackground('#f3f3f3')
+        setBackground('#bcdde6')
 
         newSkin(skin)
-        newBackground(background)
+        // newBackground(background)
     }
 
     const saveAvatar = (values) => {
@@ -173,7 +175,6 @@ export const LayoutPage = () => {
         const newData = {
             id: generateUniqueKey(),
             name: values.name,
-            description: values.description,
             skin: skin,
             face: Face,
             hair: Hair,
@@ -183,7 +184,8 @@ export const LayoutPage = () => {
             beardColor: beardColor,
             hat: Hat,
             clothes: clothe,
-            background: background
+            background: background,
+            favorite: false
         }
 
         setAvatar([...avatar, newData])
@@ -198,6 +200,7 @@ export const LayoutPage = () => {
     useEffect(() => {
         const changeBody = () => {
             document.body.style.background = `radial-gradient(at 50% 50%, rgba(255, 255, 255, 20%), ${background}80)`;
+            newBackground(background)
         }
 
         changeBody()
@@ -217,7 +220,7 @@ export const LayoutPage = () => {
             }}>
                 <div style={{
                     height: '90vh', width: '95vw',
-                    border: '2px solid #000',
+                    border: `2px solid ${background}`,
                     boxShadow: '0 10px 20px #00000030',
                     borderRadius: '3vh', display: 'flex', alignItems: 'center', justifyContent: 'center',
                     // backgroundColor: `${background}`,
@@ -235,65 +238,159 @@ export const LayoutPage = () => {
                         <BodyAvatar clothe={clothe} />
                     </div>
 
-                    <div style={{
-                        width: '60%', height: '10%',
-                        position: 'absolute', top: '10vh', display: 'flex', flexWrap: 'wrap',
-                        alignItems: 'center', justifyContent: 'center', flexDirection: 'row'
-                    }}>
+                    <div
+                        className='control-buttons-large'
+                        style={{
+                            width: '60%', height: '10%',
+                            position: 'absolute', top: '10vh', flexWrap: 'wrap',
+                            alignItems: 'center', justifyContent: 'center', flexDirection: 'row'
+                        }}>
                         <Button
+                            className='avatar'
+                            onClick={() => setVisible(true)}
+                            icon={<AiFillSave size={20} />}
+                            style={{
+                                backgroundColor: `${background}70`,
+                                width: 'auto', borderRadius: '1vh', margin: '1vh',
+                                height: 'auto', border: `1.6px solid ${background}90`, fontWeight: 500,
+                                color: '#fff', transition: 'all 0.45s ease-in-out',
+                                fontSize: '3vh'
+                            }}>Save</Button>
+
+
+                        <Button
+                            className='avatar'
+                            icon={<ImShuffle size={20} />}
+                            onClick={getRandomAvatar}
+                            style={{
+                                backgroundColor: `${background}70`,
+                                width: 'auto', borderRadius: '1vh', margin: '1vh',
+                                height: 'auto', border: `1.6px solid ${background}90`, fontWeight: 500,
+                                color: '#fff', transition: 'all 0.45s ease-in-out',
+                                fontSize: '3vh'
+                            }}>Random</Button>
+                        <Button
+                            className='avatar'
+                            icon={<AiOutlineUserAdd size={20} />}
                             onClick={newAvatar}
                             style={{
-                                borderRadius: '2vh 0 0 2vh', width: '15vh',
-                                border: '1.6px solid #000', fontWeight: 500, marginBottom:'1vh',
-                                backgroundColor: `${background}70`
+                                backgroundColor: `${background}70`,
+                                width: 'auto', borderRadius: '1vh', marginLeft: '2vh',
+                                height: 'auto', border: `1.6px solid ${background}90`, fontWeight: 500,
+                                color: '#fff', transition: 'all 0.45s ease-in-out',
+                                fontSize: '3vh'
                             }}>New avatar</Button>
 
                         <Link to="/avatar-studio/my-avatars"
                             style={{
-                                width: '15vh', marginLeft: '0.5vh', marginBottom:'1vh',
+
                             }}>
                             <Button
+                                className='avatar'
+                                icon={<PiUsersThreeFill size={20} />}
                                 style={{
-                                    borderRadius: '0 0 0 0', fontWeight: 500, backgroundColor: 'red',
-                                    border: '1.6px solid #000', width: '100%',
-                                    backgroundColor: `${background}70`
+                                    backgroundColor: `${background}70`,
+                                    width: 'auto', borderRadius: '1vh', margin: '1vh',
+                                    height: 'auto', border: `1.6px solid ${background}90`, fontWeight: 500,
+                                    color: '#fff', transition: 'all 0.45s ease-in-out',
+                                    fontSize: '3vh'
                                 }}>My avatars</Button>
                         </Link>
 
 
+
+
+                        <Link to="/avatar-studio/login" style={{
+                        }}>
+                            <Button
+                                className='avatar'
+                                icon={<HiLogout size={20} />}
+                                style={{
+                                    backgroundColor: `${background}70`,
+                                    width: 'auto', borderRadius: '1vh', margin: '1vh',
+                                    height: 'auto', border: `1.6px solid ${background}90`, fontWeight: 500,
+                                    color: '#fff', transition: 'all 0.45s ease-in-out',
+                                    fontSize: '3vh'
+                                }}>Logout</Button>
+
+                        </Link>
+
+                    </div>
+
+                    <div
+                        className='control-buttons-small'
+                        style={{
+                            width: 'auto', height: 'auto', left: '4vw',
+                            position: 'absolute', top: '5vh', flexWrap: 'wrap',
+                            alignItems: 'flex-start', justifyContent: 'center', flexDirection: 'column'
+                        }}>
                         <Button
+                            className='avatar'
                             onClick={() => setVisible(true)}
                             icon={<AiFillSave size={20} />}
                             style={{
-                                // position: 'absolute', right: '2vh',
-                                marginLeft: '0.5vh', width: '10vh', borderRadius: '0', marginBottom:'1vh',
-                                border: '1.6px solid #000', backgroundColor: `${background}70`
+                                backgroundColor: `${background}70`,
+                                aspectRatio: '1/1', borderRadius: '1vh', marginTop: '2vh',
+                                width: 'auto', border: `1.6px solid ${background}90`, fontWeight: 500,
+                                color: '#fff', transition: 'all 0.45s ease-in-out',
                             }} />
 
 
                         <Button
+                            className='avatar'
                             icon={<ImShuffle size={20} />}
                             onClick={getRandomAvatar}
                             style={{
-                                // position: 'absolute', right: '2vh',
-                                marginLeft: '0.5vh', width: '10vh', borderRadius: '0',marginBottom:'1vh',
-                                border: '1.6px solid #000', backgroundColor: `${background}70`
+                                backgroundColor: `${background}70`,
+                                aspectRatio: '1/1', borderRadius: '1vh', marginTop: '2vh',
+                                width: 'auto', border: `1.6px solid ${background}90`, fontWeight: 500,
+                                color: '#fff', transition: 'all 0.45s ease-in-out',
+                            }} />
+                        <Button
+                            className='avatar'
+                            icon={<AiOutlineUserAdd size={20} />}
+                            onClick={newAvatar}
+                            style={{
+                                backgroundColor: `${background}70`,
+                                aspectRatio: '1/1', borderRadius: '1vh', marginTop: '2vh',
+                                width: 'auto', border: `1.6px solid ${background}90`, fontWeight: 500,
+                                color: '#fff', transition: 'all 0.45s ease-in-out',
                             }} />
 
+                        <Link to="/avatar-studio/my-avatars"
+                            style={{
+
+                            }}>
+                            <Button
+                                className='avatar'
+                                icon={<PiUsersThreeFill size={20} />}
+                                style={{
+                                    backgroundColor: `${background}70`,
+                                    aspectRatio: '1/1', borderRadius: '1vh', marginTop: '2vh',
+                                    width: 'auto', border: `1.6px solid ${background}90`, fontWeight: 500,
+                                    color: '#fff', transition: 'all 0.45s ease-in-out',
+                                }} />
+                        </Link>
+
+
+
+
                         <Link to="/avatar-studio/login" style={{
-                            width: '10vh', marginLeft: '0.5vh',marginBottom:'1vh',
                         }}>
                             <Button
+                                className='avatar'
                                 icon={<HiLogout size={20} />}
                                 style={{
-                                    // position: 'absolute', right: '2vh',
-                                    width: '100%', borderRadius: '0 2vh 2vh 0',
-                                    border: '1.6px solid #000', backgroundColor: `${background}70`
+                                    backgroundColor: `${background}70`,
+                                    aspectRatio: '1/1', borderRadius: '1vh', marginTop: '2vh',
+                                    width: 'auto', border: `1.6px solid ${background}90`, fontWeight: 500,
+                                    color: '#fff', transition: 'all 0.45s ease-in-out',
                                 }} />
 
                         </Link>
 
                     </div>
+
 
 
                     <Tabs
@@ -312,7 +409,7 @@ export const LayoutPage = () => {
                             position: 'absolute', bottom: '8vh', fontWeight: 500,
                         }}
                         tabBarStyle={{
-                             width: '80vw',
+                            width: '80vw',
                         }}
                         defaultActiveKey="1" items={items} onChange={onChange} />
                 </div>
@@ -333,7 +430,7 @@ export const LayoutPage = () => {
                     style={{
                         height: 'auto',
                         width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center',
-                        flexDirection: 'column'
+                        flexDirection: 'row'
                     }}>
                     <Form.Item
                         name='name'
@@ -345,29 +442,18 @@ export const LayoutPage = () => {
                         }} placeholder='Name' />
                     </Form.Item>
 
-                    <Form.Item
-                        name='description'
-                        style={{
-                            width: '100%', margin: '1vh 0 0 0'
-                        }}>
-                        <TextArea style={{
-                            backgroundColor: '#f1f1f1'
-                        }} placeholder='Description ...' />
-                    </Form.Item>
-
                     <Form.Item style={{
-                        width: 'auto', margin: '2vh 0 0 0',
+                        width: 'auto', margin: '0 2vh 0 2vh',
                         display: 'flex', alignItems: 'center', justifyContent: 'center',
                     }}>
                         <Button
+                        icon={<AiFillSave size={20}/>}
                             htmlType='submit'
                             style={{
-                                color: '#fff', fontWeight: 500,
-                                width: '30vh', backgroundColor: background,
+                                color: '#fff', fontWeight: 500, aspectRatio:'1/1',
+                                width: 'auto', backgroundColor: background,
                                 border: `1.5px solid ${background}`
-                            }}>
-                            Save
-                        </Button>
+                            }}/>
                     </Form.Item>
                 </Form>
 

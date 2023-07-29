@@ -9,6 +9,25 @@
         display: flex;
     }
 
+    .control-buttons-small {
+        display: flex;
+    }
+
+    .control-buttons-large {
+        display: none;
+    }
+
+    .logout-my-avatars {
+        display: none;
+    }
+    .login-large {
+        display: none;
+    }
+
+    .login-small {
+        display: flex;
+    }
+
 }
 
 @media screen and (min-width: 751px) and (max-width: 1200px) {
@@ -19,6 +38,22 @@
     .tab-lil {
         display: none;
     }
+
+    .control-buttons-small {
+        display: none;
+    }
+
+    .control-buttons-large {
+        display: flex;
+    }
+    .login-large {
+        display: flex;
+    }
+
+    .login-small {
+        display: none;
+    }
+
 
 
 }
@@ -32,6 +67,22 @@
     }
 
     .tab-lil {
+        display: none;
+    }
+
+    .control-buttons-small {
+        display: none;
+    }
+
+    .control-buttons-large {
+        display: flex;
+    }
+
+    .login-large {
+        display: flex;
+    }
+
+    .login-small {
         display: none;
     }
 

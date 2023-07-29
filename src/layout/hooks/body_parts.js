@@ -25,6 +25,8 @@ import hat_5 from '../../assets/hats/SVG/hat-7.svg'
 import beard_1 from '../../assets/beards/SVG/beard-1.svg'
 import beard_2 from '../../assets/beards/SVG/beard-2.svg'
 
+import title from '../../assets/SVG/title.svg'
+
 
 export const faces = {
     face_1,
@@ -64,4 +66,8 @@ export const beards = {
     beard_0 :'',
     beard_1,
     beard_2
+}
+
+export const texts = {
+    title
 }

@@ -15,7 +15,7 @@ code {
 }
 
 .scrollable-div {
-  max-width: 80vw;
+  max-width: 90vw;
   overflow: auto;
   overflow-y: auto;
   overflow-x: auto;
@@ -54,4 +54,19 @@ code {
 
 .avatar:hover {
   transform: translateY(-5px) !important;
+}
+
+.icon-delete:hover {
+  transform: translateY(-5px) !important;
+  color: #e96767 !important;
+}
+
+.icon-download:hover {
+  transform: translateY(-5px) !important;
+  color: #5abf86 !important;
+}
+
+.icon-fav:hover {
+  transform: translateY(-5px) !important;
+  color: #f0c145 !important;
 }

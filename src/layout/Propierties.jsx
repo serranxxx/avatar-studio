@@ -27,7 +27,7 @@ export const Propierties = (props) => {
                                                         '#f3f3f3' : props.type === 'beard' ?
                                                             '#f3f3f3' : skin} `,
 
-                            marginRight: '1vh', border: '4px solid #fff', marginLeft: '1vh'
+                            marginRight: '1vh', border: '2px solid #fff', marginLeft: '1vh'
                         }}>
 
                         {

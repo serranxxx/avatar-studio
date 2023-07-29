@@ -8,6 +8,7 @@ export const Selector = (props) => {
 
     const [current, setCurrent] = useState([])
     const { background } = useContext(appContext)
+    const bg = JSON.parse(localStorage.getItem('avatar-background'))
 
     const changeColor = (value) => {
         if (props.type === 'hair' || props.type === 'beard') {
@@ -41,7 +42,7 @@ export const Selector = (props) => {
                 className='scrollable-div'
                 style={{
                     width: 'auto', height: 'auto',
-                    backgroundColor: `#ffffff50`, border: '2.5px solid #000', padding: '2%',
+                    backgroundColor: `${bg}70`, border: `2px solid ${bg}80`, padding: '2%',
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
                     flexDirection: 'row', borderRadius: '2vh',
                 }}>
@@ -67,6 +68,7 @@ export const Selector = (props) => {
 
 
             </div>
+            
         </div>
     )
 }

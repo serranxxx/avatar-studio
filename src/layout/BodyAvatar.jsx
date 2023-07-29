@@ -15,6 +15,7 @@ export const BodyAvatar = (props) => {
             <svg
                 style={{
                     fill: `${props.clothe}`, width: '80%',
+                    transition: 'all 0.45s ease-in-out',
                     // marginBottom: '100px'
                     // padding: '5%', marginTop: '0vh'
                 }}
@@ -35,6 +36,7 @@ export const HeadAvatar = (props) => {
         <div style={{
             display: 'flex', alignItems: 'center', justifyContent: 'center',
             width: '100%', position: 'relative',
+            transition: 'all 0.45s ease-in-out',
             // height:'100%',
             // marginBottom: '-7%',
             // border: '1px solid blue'
@@ -72,6 +74,7 @@ export const HairAvatar = (props) => {
             style={{
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
                 position: 'absolute', width: '100%',
+                transition: 'all 0.45s ease-in-out',
                 // border: '1px solid red',
                 height: '100%',
                 top: '-40px'
@@ -107,6 +110,7 @@ export const GlassesAvatar = (props) => {
             style={{
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
                 position: 'absolute', width: '100%',
+                transition: 'all 0.45s ease-in-out',
                 // border: '1px solid red',
                 height: '100%',
                 top: '-10px'
@@ -135,6 +139,7 @@ export const HatsAvatar = (props) => {
             style={{
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
                 position: 'absolute', width: '100%',
+                transition: 'all 0.45s ease-in-out',
                 // border: '1px solid red',
                 width: '100%',
                 top: '-100px'
@@ -163,6 +168,7 @@ export const BeardAvatar = (props) => {
             style={{
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
                 position: 'absolute', width: '100%',
+                transition: 'all 0.45s ease-in-out',
                 // border: '1px solid red',
                 height: '100%',
                 top: '90px', left: `${props.beard === beards.beard_2 ? '68px' : ''}`
