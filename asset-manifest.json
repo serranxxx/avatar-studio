@@ -1,7 +1,8 @@
 {
   "files": {
-    "main.css": "/avatar-studio/static/css/main.3803f276.css",
-    "main.js": "/avatar-studio/static/js/main.9ca54a3e.js",
+    "main.css": "/avatar-studio/static/css/main.fee00494.css",
+    "main.js": "/avatar-studio/static/js/main.5932bbdf.js",
+    "static/media/title.svg": "/avatar-studio/static/media/title.9244618bfa6b4f88d7f613352b963998.svg",
     "static/media/hat-7.svg": "/avatar-studio/static/media/hat-7.459b260ac5b47e4456c3f2692d0c815a.svg",
     "static/media/hat-4.svg": "/avatar-studio/static/media/hat-4.4d671eac854e6eaf1fb6ebe8aa858b06.svg",
     "static/media/hat-6.svg": "/avatar-studio/static/media/hat-6.36045e0e877787420c1044221c385c90.svg",
@@ -23,11 +24,11 @@
     "static/media/hair-2.svg": "/avatar-studio/static/media/hair-2.475492c8e433289439fed323e3616da2.svg",
     "static/media/beard-2.svg": "/avatar-studio/static/media/beard-2.ceb017bf227188a3bc56056b99f2f394.svg",
     "static/media/beard-1.svg": "/avatar-studio/static/media/beard-1.f67b11bd4f88615808a9dc4bb6dffaba.svg",
-    "main.3803f276.css.map": "/avatar-studio/static/css/main.3803f276.css.map",
-    "main.9ca54a3e.js.map": "/avatar-studio/static/js/main.9ca54a3e.js.map"
+    "main.fee00494.css.map": "/avatar-studio/static/css/main.fee00494.css.map",
+    "main.5932bbdf.js.map": "/avatar-studio/static/js/main.5932bbdf.js.map"
   },
   "entrypoints": [
-    "static/css/main.3803f276.css",
-    "static/js/main.9ca54a3e.js"
+    "static/css/main.fee00494.css",
+    "static/js/main.5932bbdf.js"
   ]
 }
