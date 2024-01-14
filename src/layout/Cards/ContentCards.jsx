@@ -82,7 +82,7 @@ export const ContentCards = ({
                 // className='scrollable-div resume-large'
                 style={{
                     marginTop: '12vh', // Ajusta este valor para que el contenido no quede detrás del header
-                    marginBottom: '0vh', // Ajusta este valor para que el contenido no quede detrás del footer
+                    marginBottom: '11vh', // Ajusta este valor para que el contenido no quede detrás del footer
                     overflowY: 'scroll',
                     alignItems: 'flex-start', justifyContent: 'flex-start',
                     flexDirection: 'row',
