@@ -11,7 +11,7 @@ export const AppRouter = () => {
   return (
     <Routes>
         <Route path ="/avatar-studio/login" element = {<Login />} />
-        <Route path = "/avatar-studio*" element = {<LoginPage />} />
+        <Route path = "/avatar-studio*" element = {<Login />} />
         <Route path = "/avatar-studio/home" element = {<HomePage />} />
         <Route path = "/avatar-studio/cards" element = {<MyCards />} />
         <Route path = "/avatar-studio/create-avatar" element = {<LayoutPage />} />
