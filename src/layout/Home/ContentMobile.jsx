@@ -99,10 +99,11 @@ export const ContentMobile = () => {
                 style={{
                     marginTop: '0vh', // Ajusta este valor para que el contenido no quede detrás del header
                     marginBottom: '9vh', // Ajusta este valor para que el contenido no quede detrás del footer
-                    overflowY: 'scroll',
+                    // overflowY: 'scroll',
                     // height: 'auto', // Ajusta estos valores según el header y footer
                     display: 'flex', alignItems: 'center', justifyContent: 'space-around',
                     flexDirection: 'row',
+                    height:'25vh',
                     // backgroundColor:'red',
 
                     background: `radial-gradient(at 50% 50%, rgba(255, 255, 255, 20%), ${`${background}80`})`,
@@ -117,7 +118,7 @@ export const ContentMobile = () => {
                     marginTop: '0vh'
                 }}>
                     <Row style={{
-                        width: '80%', display: 'flex', alignItems: 'center',
+                        width: '80%', display: 'flex', alignItems: 'flex-start',
                         justifyContent: 'space-between', flexDirection: 'row'
                     }}>
                         <Button

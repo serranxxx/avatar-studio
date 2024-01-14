@@ -210,14 +210,14 @@ export const ContentHome = () => {
                     // background: `radial-gradient(at 50% 50%, rgba(255, 255, 255, 20%), ${background})`,
                 }}>
                     <div style={{
-                        height: '50%', width: '7vh',
+                        height: '80%', width: '7vh',
                         borderRadius: '3vh',
                         backgroundColor: `${background}40`,
                         backdropFilter: 'blur(16px)',
                         border: `2px solid ${background}10`,
                         padding: '1%',
                         position: 'absolute', right: '15px',
-                        bottom: '50px', zIndex:+1,
+                        bottom: '20px', zIndex:+1,
                         // bottom:'px',
                         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
                         flexDirection: 'column',
