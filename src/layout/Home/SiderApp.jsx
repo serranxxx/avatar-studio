@@ -96,7 +96,7 @@ export const SiderApp = () => {
                 style={{
                     backgroundColor: darker(background, 0.9)
                 }} >
-                {collapsed
+                {!collapsed
                     ? <DoubleRightOutlined style={{ color: lighter(background, 0.6) }} />
                     : <DoubleLeftOutlined style={{ color: lighter(background, 0.6) }} />}</div>}
             collapsed={collapsed}
@@ -108,7 +108,7 @@ export const SiderApp = () => {
                 backgroundColor: lighter(background, 0.4), transition: 'all 0.25s ease-in-out',
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
                 margin: '10vh 0 0vh 0',
-                width: '100%', borderLeft: `1px solid ${darker(background, 0.8)}`
+                width: '100%', borderLeft: `0px solid ${darker(background, 0.8)}`
 
             }}
         >

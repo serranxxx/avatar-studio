@@ -51,29 +51,57 @@ export const ContentCards = ({
 
     return (
 
-        <Content
-            // className='scrollable-div resume-large'
-            style={{
-                marginTop: '15vh', // Ajusta este valor para que el contenido no quede detrás del header
-                marginBottom: '0vh', // Ajusta este valor para que el contenido no quede detrás del footer
-                overflowY: 'scroll',
-                display: 'flex', alignItems: 'flex-start', justifyContent: 'center',
-                flexDirection: 'row', 
-            }}>
-            <div style={{
-                width:'90%',
-                display: 'flex', alignItems: 'flex-start', justifyContent: 'center',
-                flexDirection: 'row', flexWrap: 'wrap',
-            }}>
-                <Card 
-                    data={filteredData}
-                    setCardID={setCardID}
-                    deleteAvatar={deleteAvatar}
-                    makeFavorite={makeFavorite}
-                />
-            </div>
+        <>
+            <Content
+                className='large'
+                // className='scrollable-div resume-large'
+                style={{
+                    marginTop: '15vh', // Ajusta este valor para que el contenido no quede detrás del header
+                    marginBottom: '0vh', // Ajusta este valor para que el contenido no quede detrás del footer
+                    overflowY: 'scroll',
+                    alignItems: 'flex-start', justifyContent: 'center',
+                    flexDirection: 'row',
+                }}>
+                <div style={{
+                    width: '90%',
+                    display: 'flex', alignItems: 'flex-start', justifyContent: 'center',
+                    flexDirection: 'row', flexWrap: 'wrap',
+                }}>
+                    <Card
+                        data={filteredData}
+                        setCardID={setCardID}
+                        deleteAvatar={deleteAvatar}
+                        makeFavorite={makeFavorite}
+                    />
+                </div>
 
-        </Content>
+            </Content>
+
+            <Content
+                className='small'
+                // className='scrollable-div resume-large'
+                style={{
+                    marginTop: '12vh', // Ajusta este valor para que el contenido no quede detrás del header
+                    marginBottom: '0vh', // Ajusta este valor para que el contenido no quede detrás del footer
+                    overflowY: 'scroll',
+                    alignItems: 'flex-start', justifyContent: 'flex-start',
+                    flexDirection: 'row',
+                }}>
+                <div style={{
+                    width: '100%',
+                    display: 'flex', alignItems: 'flex-start', justifyContent: 'center',
+                    flexDirection: 'row', flexWrap: 'wrap',
+                }}>
+                    <Card
+                        data={filteredData}
+                        setCardID={setCardID}
+                        deleteAvatar={deleteAvatar}
+                        makeFavorite={makeFavorite}
+                    />
+                </div>
+
+            </Content>
+        </>
 
     )
 }
