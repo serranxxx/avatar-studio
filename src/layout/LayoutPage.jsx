@@ -22,7 +22,7 @@ export const LayoutPage = () => {
     const [form] = Form.useForm()
     const [visible, setVisible] = useState(false)
     const [avatar, setAvatar] = useState(data)
-    const { newSkin, newBackground, newData } = useContext(appContext)
+    const { newData } = useContext(appContext)
     const [Face, setFace] = useState(faces.face_1)
     const [skin, setSkin] = useState(RandomSkin(Math.floor(Math.random() * 8) + 1))
     const [background, setBackground] = useState('#bcdde6')
@@ -54,12 +54,12 @@ export const LayoutPage = () => {
 
     const skinSelector = (skin) => {
         setSkin(skin)
-        newSkin(skin)
+        // newSkin(skin)
     }
 
     const backgroundSelector = (bg) => {
         setBackground(bg)
-        newBackground(bg)
+        // newBackground(bg)
     }
 
     const clotheSelector = (clothe) => {
@@ -69,7 +69,6 @@ export const LayoutPage = () => {
     const hairSelector = (hair) => {
         setHair(hair)
     }
-
 
     const sethairColor = (color) => {
         setHairColor(color)
@@ -150,7 +149,7 @@ export const LayoutPage = () => {
         setClothe(RandomColor())
         setBackground(RandomColor())
 
-        newSkin(skin)
+        // newSkin(skin)
         // newBackground(background)
     }
 
@@ -166,7 +165,7 @@ export const LayoutPage = () => {
         setClothe('#ddd')
         setBackground('#bcdde6')
 
-        newSkin(skin)
+        // newSkin(skin)
         // newBackground(background)
     }
 
@@ -200,7 +199,7 @@ export const LayoutPage = () => {
     useEffect(() => {
         const changeBody = () => {
             document.body.style.background = `radial-gradient(at 50% 50%, rgba(255, 255, 255, 20%), ${background}80)`;
-            newBackground(background)
+            // newBackground(background)
         }
 
         changeBody()
@@ -317,7 +316,7 @@ export const LayoutPage = () => {
 
                     </div>
 
-                    <div
+                    {/* <div
                         className='control-buttons-small'
                         style={{
                             width: 'auto', height: 'auto', left: '4vw',
@@ -389,7 +388,7 @@ export const LayoutPage = () => {
 
                         </Link>
 
-                    </div>
+                    </div> */}
 
 
 

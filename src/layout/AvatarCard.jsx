@@ -6,9 +6,6 @@ import { AiFillStar, AiOutlineStar, AiFillDelete } from "react-icons/ai";
 
 export const AvatarCard = (props) => {
 
-
-
-
     return (
         <>
             {

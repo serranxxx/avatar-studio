@@ -42,7 +42,7 @@ export const Selector = (props) => {
                 className='scrollable-div'
                 style={{
                     width: 'auto', height: 'auto',
-                    backgroundColor: `${bg}70`, border: `2px solid ${bg}80`, padding: '2%',
+                    backgroundColor: `${background}70`, border: `2px solid ${background}80`, padding: '2%',
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
                     flexDirection: 'row', borderRadius: '2vh',
                 }}>
