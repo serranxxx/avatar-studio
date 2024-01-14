@@ -186,7 +186,7 @@ export const ContentHome = () => {
                     marginTop: '0vh', // Ajusta este valor para que el contenido no quede detrás del header
                     marginBottom: '0vh', // Ajusta este valor para que el contenido no quede detrás del footer
                     overflowY: 'scroll',
-                    position: 'fixed', zIndex: 1, width: '100%',
+                    // position: 'fixed', zIndex: 1, width: '100%',
                     backdropFilter: 'blur(16px)',
                     // position:'fixed',
                     // height: 'auto', // Ajusta estos valores según el header y footer

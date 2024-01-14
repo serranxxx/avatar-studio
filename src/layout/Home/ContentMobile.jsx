@@ -97,7 +97,7 @@ export const ContentMobile = () => {
             <Content
                 // className='scrollable-div resume-large'
                 style={{
-                    marginTop: '65vh', // Ajusta este valor para que el contenido no quede detrás del header
+                    marginTop: '0vh', // Ajusta este valor para que el contenido no quede detrás del header
                     marginBottom: '9vh', // Ajusta este valor para que el contenido no quede detrás del footer
                     overflowY: 'scroll',
                     // height: 'auto', // Ajusta estos valores según el header y footer
