@@ -114,7 +114,7 @@ export const ContentMobile = () => {
                     // width: '100%',
                     display: 'flex', alignItems: 'center', justifyContent: 'flex-start',
                     flexDirection: 'column', width: '100%', height: '100%',
-                    marginTop: '5vh'
+                    marginTop: '0vh'
                 }}>
                     <Row style={{
                         width: '80%', display: 'flex', alignItems: 'center',

@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { Button, Col, Form, Layout, Row, message } from 'antd';
-import { BodyAvatar, HeadAvatar } from '../BodyAvatar';
+import { BodyAvatar, HeadAvatar, HeadAvatarSmall } from '../BodyAvatar';
 import { beards, faces, glasses, hairs, hats } from '../hooks/body_parts';
 import { appContext } from '../../context/appContext';
 import { RandomFace, RandomSkin } from '../hooks/Randomizer';
@@ -202,7 +202,7 @@ export const ContentHome = () => {
 
                 <div style={{
                     width: '100%',
-                    marginTop: '20vh',
+                    marginTop: '10vh',
                     display: 'flex', alignItems: 'center',
                     justifyContent: 'center',
                     position: 'relative'
@@ -210,14 +210,14 @@ export const ContentHome = () => {
                     // background: `radial-gradient(at 50% 50%, rgba(255, 255, 255, 20%), ${background})`,
                 }}>
                     <div style={{
-                        height: '35%', width: '7vh',
+                        height: '50%', width: '7vh',
                         borderRadius: '3vh',
                         backgroundColor: `${background}40`,
                         backdropFilter: 'blur(16px)',
                         border: `2px solid ${background}10`,
                         padding: '1%',
-                        position: 'absolute', right: '5px',
-                        bottom: '10px', zIndex:+1,
+                        position: 'absolute', right: '15px',
+                        bottom: '50px', zIndex:+1,
                         // bottom:'px',
                         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
                         flexDirection: 'column',
@@ -229,7 +229,7 @@ export const ContentHome = () => {
                                 borderRadius: '50%',
                                 display: 'flex', alignItems: 'center', justifyContent: 'center',
                             }}
-                            icon={<GiPerspectiveDiceSixFacesRandom size={33}
+                            icon={<GiPerspectiveDiceSixFacesRandom size={25}
                                 style={{
                                     color: darker(background, 0.7)
                                 }}
@@ -242,7 +242,7 @@ export const ContentHome = () => {
                                 borderRadius: '50%',
                                 display: 'flex', alignItems: 'center', justifyContent: 'center',
                             }}
-                            icon={<MdAddReaction size={30}
+                            icon={<MdAddReaction size={22}
                                 style={{
                                     color: darker(background, 0.7)
                                 }} />} />
@@ -254,7 +254,7 @@ export const ContentHome = () => {
                                 borderRadius: '50%',
                                 display: 'flex', alignItems: 'center', justifyContent: 'center',
                             }}
-                            icon={<IoSave size={25}
+                            icon={<IoSave size={20}
                                 style={{
                                     color: darker(background, 0.7)
                                 }} />} />
@@ -263,14 +263,14 @@ export const ContentHome = () => {
                     </div>
                     <div
                         style={{
-                            height: '100%', width: '350px',
+                            height: '100%', width: '150px',
                             position: 'relative',
                             // position: 'relative',
                             display: 'flex', alignItems: 'center', justifyContent: 'center',
                             flexDirection: 'column', marginBottom:'20px'
                         }}>
 
-                        <HeadAvatar face={face} skin={skin} hair={hair} color={hair_color} glasses={glasses} hat={hats} beard={beards} beardColor={beards_color} />
+                        <HeadAvatarSmall face={face} skin={skin} hair={hair} color={hair_color} glasses={glasses} hat={hats} beard={beards} beardColor={beards_color} />
                         <BodyAvatar clothe={clothes} />
                     </div>
 
