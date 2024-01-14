@@ -98,12 +98,12 @@ export const ContentMobile = () => {
                 // className='scrollable-div resume-large'
                 style={{
                     marginTop: '0vh', // Ajusta este valor para que el contenido no quede detrás del header
-                    marginBottom: '9vh', // Ajusta este valor para que el contenido no quede detrás del footer
+                    marginBottom: '11vh', // Ajusta este valor para que el contenido no quede detrás del footer
                     // overflowY: 'scroll',
                     // height: 'auto', // Ajusta estos valores según el header y footer
                     display: 'flex', alignItems: 'center', justifyContent: 'space-around',
                     flexDirection: 'row',
-                    height:'25vh',
+                    height:'35vh',
                     // backgroundColor:'red',
 
                     background: `radial-gradient(at 50% 50%, rgba(255, 255, 255, 20%), ${`${background}80`})`,
