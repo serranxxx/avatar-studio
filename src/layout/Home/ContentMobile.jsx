@@ -98,7 +98,7 @@ export const ContentMobile = () => {
                 // className='scrollable-div resume-large'
                 style={{
                     marginTop: '0vh', // Ajusta este valor para que el contenido no quede detrás del header
-                    marginBottom: '11vh', // Ajusta este valor para que el contenido no quede detrás del footer
+                    marginBottom: '9vh', // Ajusta este valor para que el contenido no quede detrás del footer
                     // overflowY: 'scroll',
                     // height: 'auto', // Ajusta estos valores según el header y footer
                     display: 'flex', alignItems: 'center', justifyContent: 'space-around',
@@ -174,7 +174,7 @@ export const ContentMobile = () => {
                                     onClick={() => newFeature(features[index].name, item)}
                                     style={{
                                         height: '8vh', aspectRatio: '1/1', cursor: 'pointer',
-                                        borderRadius: '2vh', border: `3px solid ${darker(background, 0.8)}`,
+                                        borderRadius: '1vh', border: `1px solid ${darker(background, 0.8)}`,
                                         marginBottom: '4%', marginLeft: '2%', marginRight: '2%',
                                         backgroundColor:
                                             features[index].name === 'Face' ? skin :
@@ -208,7 +208,7 @@ export const ContentMobile = () => {
                                     value={handleBackground(features[index].name)}
                                     style={{
                                         height: '8vh', aspectRatio: '1/1',
-                                        borderRadius: '2vh', border: `3px solid ${lighter(background, 0.8)}`,
+                                        borderRadius: '1vh', border: `1px solid ${lighter(background, 0.8)}`,
                                         marginBottom: '4%', marginLeft: '2%', marginRight: '2%',
                                         backgroundColor: handleBackground(features[index].name),
                                         display: 'flex', alignItems: 'center', justifyContent: 'center'
