@@ -22,7 +22,7 @@ export const Card = ({ makeFavorite, data, deleteAvatar, setCardID }) => {
                         <div
                             onClick={() => setCardID(avatar.id)}
                             style={{
-                                width: '150px', aspectRatio: '1/1', borderRadius: '2vh 2vh 0 0',
+                                width: '150px', aspectRatio: '1/1', borderRadius: '1vh 1vh 0 0',
                                 cursor:'pointer',
                                 display: 'flex', alignItems: 'center', justifyContent: 'center',
                                 backgroundColor: avatar.background,
@@ -36,7 +36,7 @@ export const Card = ({ makeFavorite, data, deleteAvatar, setCardID }) => {
 
                         </div >
                         <Row style={{
-                            width: '100%', borderRadius: '0 0 2vh 2vh',
+                            width: '100%', borderRadius: '0 0 1vh 1vh',
                             display: 'flex', alignItems: 'center', justifyContent: 'space-between',
                             padding:'0 1% 0 1%', backgroundColor: darker(avatar.background, 0.8)
                         }}>

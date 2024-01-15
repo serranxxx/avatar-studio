@@ -202,7 +202,7 @@ export const ContentHome = () => {
 
                 <div style={{
                     width: '100%',
-                    marginTop: '10vh',
+                    marginTop: '9vh',
                     display: 'flex', alignItems: 'center',
                     justifyContent: 'center',
                     position: 'relative'
@@ -216,7 +216,7 @@ export const ContentHome = () => {
                             position: 'relative',
                             // position: 'relative',
                             display: 'flex', alignItems: 'center', justifyContent: 'center',
-                            flexDirection: 'column', marginBottom:'20px'
+                            flexDirection: 'column', marginBottom:'0px'
                         }}>
 
                         <HeadAvatarSmall face={face} skin={skin} hair={hair} color={hair_color} glasses={glasses} hat={hats} beard={beards} beardColor={beards_color} />
@@ -224,7 +224,7 @@ export const ContentHome = () => {
                     </div>
 
                     <div style={{
-                        height: '80%', width: '7vh',
+                        height: '90%', width: '7vh',
                         borderRadius: '3vh',
                         backgroundColor: `${background}40`,
                         backdropFilter: 'blur(16px)',

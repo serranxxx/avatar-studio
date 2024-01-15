@@ -146,7 +146,7 @@ export const HeaderApp = ({
                 // background: `radial-gradient(at 100% 10%, rgba(255, 255, 255, 20%), red)`,
                 // boxShadow: '10px 0px 10px #00000040',
                 borderBottom: '1px solid #f5f5f510',
-                height: '10vh',
+                height: '9vh',
                 alignItems: 'center', justifyContent: 'center'
             }}>
 
