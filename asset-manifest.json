@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/avatar-studio/static/css/main.a968029c.css",
-    "main.js": "/avatar-studio/static/js/main.e04a009d.js",
+    "main.js": "/avatar-studio/static/js/main.b9c43c2e.js",
     "static/media/title.svg": "/avatar-studio/static/media/title.9244618bfa6b4f88d7f613352b963998.svg",
     "static/media/hat-7.svg": "/avatar-studio/static/media/hat-7.459b260ac5b47e4456c3f2692d0c815a.svg",
     "static/media/hat-4.svg": "/avatar-studio/static/media/hat-4.4d671eac854e6eaf1fb6ebe8aa858b06.svg",
@@ -25,10 +25,10 @@
     "static/media/beard-2.svg": "/avatar-studio/static/media/beard-2.ceb017bf227188a3bc56056b99f2f394.svg",
     "static/media/beard-1.svg": "/avatar-studio/static/media/beard-1.f67b11bd4f88615808a9dc4bb6dffaba.svg",
     "main.a968029c.css.map": "/avatar-studio/static/css/main.a968029c.css.map",
-    "main.e04a009d.js.map": "/avatar-studio/static/js/main.e04a009d.js.map"
+    "main.b9c43c2e.js.map": "/avatar-studio/static/js/main.b9c43c2e.js.map"
   },
   "entrypoints": [
     "static/css/main.a968029c.css",
-    "static/js/main.e04a009d.js"
+    "static/js/main.b9c43c2e.js"
   ]
 }
