@@ -11,9 +11,9 @@ export const HomePage = () => {
 
     const { newData, data, setBackground, background } = useContext(appContext)
 
-    useEffect(() => {
-        setBackground('#bcdde6')
-    }, [])
+    // useEffect(() => {
+    //     setBackground('#bcdde6')
+    // }, [])
 
     return (
         <>

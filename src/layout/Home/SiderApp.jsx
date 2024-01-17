@@ -103,7 +103,7 @@ export const SiderApp = () => {
             onCollapse={() => setCollapsed(!collapsed)}
             collapsible
             collapsedWidth={50}
-            width={'45%'}
+            width={'50%'}
             style={{
                 backgroundColor: lighter(background, 0.4), transition: 'all 0.25s ease-in-out',
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
@@ -178,7 +178,7 @@ export const SiderApp = () => {
                                         onClick={() => newFeature(features[index].name, item)}
                                         style={{
                                             height: '13vh', aspectRatio: '1/1', cursor: 'pointer',
-                                            borderRadius: '2vh', border: `3px solid ${darker(background, 0.8)}`,
+                                            borderRadius: '1vh', border: `1px solid ${darker(background, 0.8)}`,
                                             marginBottom: '4%', marginLeft: '2%', marginRight: '2%',
                                             backgroundColor:
                                                 features[index].name === 'Face' ? skin :
@@ -212,7 +212,7 @@ export const SiderApp = () => {
                                         value={handleBackground(features[index].name)}
                                         style={{
                                             height: '13vh', aspectRatio: '1/1',
-                                            borderRadius: '2vh', border: `3px solid ${lighter(background, 0.8)}`,
+                                            borderRadius: '1vh', border: `1px solid ${lighter(background, 0.8)}`,
                                             marginBottom: '4%', marginLeft: '2%', marginRight: '2%',
                                             backgroundColor: handleBackground(features[index].name),
                                             display: 'flex', alignItems: 'center', justifyContent: 'center'

@@ -4,14 +4,16 @@ import { Link } from 'react-router-dom'
 import { RandomColor } from '../layout/hooks/Randomizer'
 import { texts } from '../layout/hooks/body_parts'
 import { LoginCard } from '../auth/LoginCard'
+import { darker, lighter } from '../helpers/functions'
+import { randomColor } from '../helpers/randoms'
 
 export const Login = () => {
 
   const [color, setcolor] = useState(RandomColor())
 
   const changeBody = () => {
-    document.body.style.background = `radial-gradient(at 50% 50%, rgba(255, 255, 255, 20%), ${RandomColor()}80)`;
     setcolor(RandomColor())
+
   }
 
   useEffect(() => {
@@ -19,6 +21,10 @@ export const Login = () => {
     // Limpiar el intervalo cuando el componente se desmonte
     return () => clearInterval(intervalId);
   }, []); // El array de dependencias está vacío para que el efecto se ejecute solo al montar el componente
+
+  useEffect(() => {
+    document.body.style.background = `radial-gradient(at 50% 50%, rgba(255, 255, 255, 20%), ${color}80)`;
+  }, [color])
 
 
   return (
@@ -32,30 +38,50 @@ export const Login = () => {
 
         <Col style={{
           display: 'flex', alignItems: 'center', justifyContent: 'center',
-          flexDirection: 'column'
+          flexDirection: 'column', marginRight: '25px'
         }}>
-          <div>
-            <img src={texts.title} style={{
+          <Col style={{
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+            flexDirection: 'column'
+          }}>
+            <p style={{
+              margin: 0, fontSize: '4em',
+              fontWeight: 'bolder', textAlign: 'left',
+              color: darker(color, 0.8)
+            }}>avatar</p>
+            <p style={{
+              margin: '-3vh 0 -5vh 0', fontSize: '4em',
+              fontWeight: 'bolder', textAlign: 'left',
+              color: lighter(color, 0.8)
+            }}>studio</p>
+            {/* <p style={{
+              margin: 0, fontSize: '6em',
+              fontWeight: 'bolder', textAlign: 'left'
+            }}>creator</p> */}
+
+            <Link to="/avatar-studio/home"
+            >
+              <Button
+                className='avatar'
+                style={{
+                  marginTop: '7vh', backgroundColor: darker(color, 0.6),
+                  width: '22vh', height: '4vh',
+                  borderRadius: '3vh', border: `0px solid ${color}80`,
+                  fontSize: '1.3em', fontWeight: 500, transition: 'all 0.25s ease-in-out',
+                  color: lighter(color, 0.5),
+                  display: 'flex', alignItems: 'center', justifyContent: 'center'
+                  // boxShadow: '0px 7px 20px #00000020'
+                }}>
+                Let's create
+              </Button>
+
+            </Link>
+            ˝
+            {/* <img src={texts.title} style={{
               height: '30vh'
-            }} />
-          </div>
+            }} /> */}
+          </Col>
 
-          <Link to="/avatar-studio/home"
-          >
-            <Button
-              className='avatar'
-              style={{
-                marginTop: '7vh', backgroundColor: `${color}50`,
-                width: '40vh', height: '8vh',
-                borderRadius: '4vh', border: `0px solid ${color}80`,
-                fontSize: '3vh', fontWeight: 500, transition: 'all 0.25s ease-in-out',
-                color: '#fff', 
-                // boxShadow: '0px 7px 20px #00000020'
-              }}>
-              Let's start
-            </Button>
-
-          </Link>
 
 
         </Col>
@@ -75,21 +101,41 @@ export const Login = () => {
           display: 'flex', alignItems: 'center', justifyContent: 'center',
           flexDirection: 'column'
         }}>
-           <LoginCard />
-          
+
+
+          <Col style={{
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+            flexDirection: 'column'
+          }}>
+            <p style={{
+              margin: 0, fontSize: '4em',
+              fontWeight: 'bolder', textAlign: 'left',
+              color: darker(color, 0.8)
+            }}>avatar</p>
+            <p style={{
+              margin: '-3vh 0 1vh 0', fontSize: '4em',
+              fontWeight: 'bolder', textAlign: 'left',
+              color: lighter(color, 0.8)
+            }}>studio</p>
+
+          </Col>
+
+          <LoginCard />
+
           <Link to="/avatar-studio/home"
           >
             <Button
               className='avatar'
               style={{
-                marginTop: '3vh', backgroundColor: `${color}70`,
-                width: '40vh', height: '8vh',
-                borderRadius: '3vh', border: `0px solid ${color}70`,
-                fontSize: '3vh', fontWeight: 500, transition: 'all 0.25s ease-in-out',
-                color: '#fff', 
+                marginTop: '2vh', backgroundColor: darker(color, 0.6),
+                width: '22vh', height: '4vh',
+                borderRadius: '3vh', border: `0px solid ${color}80`,
+                fontSize: '1.3em', fontWeight: 500, transition: 'all 0.25s ease-in-out',
+                color: lighter(color, 0.5),
+                display: 'flex', alignItems: 'center', justifyContent: 'center'
                 // boxShadow: '0px 7px 20px #00000020'
               }}>
-              Let's start
+              Let's create
             </Button>
 
           </Link>
@@ -97,7 +143,7 @@ export const Login = () => {
 
         </Col>
 
-       
+
 
       </div>
     </>

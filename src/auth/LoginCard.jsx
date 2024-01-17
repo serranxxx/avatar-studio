@@ -2,7 +2,7 @@
 import { Button } from 'antd'
 import { RandomColor, RandomFace, RandomGlasses, RandomHair, RandomHats, RandomMoustache, RandomSkin } from '../layout/hooks/Randomizer'
 import { useEffect, useState } from 'react'
-import { BodyAvatar, HeadAvatar } from '../layout/BodyAvatar'
+import { BodyAvatar, HeadAvatar, HeadAvatarSmall } from '../layout/BodyAvatar'
 import { beards } from '../layout/hooks/body_parts'
 
 export const LoginCard = (props) => {
@@ -48,7 +48,7 @@ export const LoginCard = (props) => {
                 style={{
                     marginLeft: '1vh', marginTop: '1vh',
                     width: 'auto', aspectRatio: '1/1', borderRadius: '50%',
-                    background: background, border: `2px solid ${background}`,
+                    background: 'transparent', border: `0px solid ${background}`,
                     display: 'flex', alignItems: 'flex-end', justifyContent: 'center', paddingBottom: '1%'
                 }
                 }>
@@ -57,21 +57,22 @@ export const LoginCard = (props) => {
                     // className='avatar'
                     // onMouseEnter={getRandomAvatar}
                     style={{
-                        width: '350px', aspectRatio: '1/1', borderRadius: '2vh', paddingTop: '5%',
-                        boxShadow: '0 0px 20px #00000020', transition: 'all 0.45s ease-in-out',
+                        width: '150px', aspectRatio: '1/1', borderRadius: '2vh', paddingTop: '5%',
+                        // boxShadow: '0 0px 20px #00000020', transition: 'all 0.45s ease-in-out',
                         display: 'flex', alignItems: 'flex-end', justifyContent: 'center', borderRadius: '50%',
                     }}>
                     <div
                         style={{
                             width: '100%',
-                            background: `radial-gradient(at 50% 50%, rgba(255, 255, 255, 50%), ${background}80)`,
+                            // background: `radial-gradient(at 50% 50%, rgba(255, 255, 255, 50%), ${background}80)`,
+                            backgroundColor: 'transparent',
                             position: 'relative',
                             display: 'flex', alignItems: 'center', justifyContent: 'center',
                             flexDirection: 'column', borderRadius: '50%',
                             transition: 'all 0.65s ease-in-out',
                         }}>
 
-                        <HeadAvatar face={Face} skin={skin} hair={Hair} color={hairColor} glasses={Glasses} hat={Hat} beard={Beard} beardColor={beardColor} />
+                        <HeadAvatarSmall face={Face} skin={skin} hair={Hair} color={hairColor} glasses={Glasses} hat={Hat} beard={Beard} beardColor={beardColor} />
                         <BodyAvatar clothe={clothe} />
 
 
