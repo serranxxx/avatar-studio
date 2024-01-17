@@ -103,7 +103,7 @@ export const SiderApp = () => {
             onCollapse={() => setCollapsed(!collapsed)}
             collapsible
             collapsedWidth={50}
-            width={'50%'}
+            width={'30%'}
             style={{
                 backgroundColor: lighter(background, 0.4), transition: 'all 0.25s ease-in-out',
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
@@ -118,10 +118,10 @@ export const SiderApp = () => {
                     <Col style={{
                         // width: '100%',
                         display: 'flex', alignItems: 'center', justifyContent: 'flex-start',
-                        flexDirection: 'column', width: '40vw', height: '100%',
-                        marginTop: '5vh'
+                        flexDirection: 'column', width: '30vw', height: '100%',
+                        // marginTop: '5vh'
                     }}>
-                        <Row style={{
+                        {/* <Row style={{
                             width: '80%', display: 'flex', alignItems: 'center',
                             justifyContent: 'space-between', flexDirection: 'row'
                         }}>
@@ -164,10 +164,53 @@ export const SiderApp = () => {
                                 }}
                             />
 
-                        </Row>
+                        </Row> */}
+
+                        <div style={{
+                            width: '100%', backgroundColor: darker(background, 0.6), display: 'flex',
+                            alignItems: 'center', justifyContent: 'center',
+                            borderBottom: `1.5px solid ${darker(background, 0.9)}`
+                        }}>
+                            <Row style={{
+                                display: 'flex', alignItems: 'center', justifyContent: 'space-around',
+                                flexDirection: 'row', width: '100%',
+                                backgroundColor: 'transparent',
+                                margin: '2vh 0 0 0',
+                                // border: '1px solid red',
+                                padding: '0 8% 0 8%',
+
+                            }}>
+                                {
+                                    features.map((item) => (
+                                        <Button
+                                            onClick={() => setIndex(item.index)}
+                                            type='ghost'
+                                            style={{
+                                                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                                marginBottom: '2vh', borderRadius: '0',
+                                                borderBottom: index === item.index ?
+                                                    `2px solid ${lighter(background, 0.6)}` : '0px solid #000',
+                                                marginTop: '1vh'
+                                            }}
+                                            icon={<item.icon
+                                                style={{
+                                                    color: index === item.index ?
+                                                        lighter(background, 0.6)
+                                                        : `${background}80`,
+                                                    marginBottom: '1vh'
+                                                }}
+                                                size={30}
+                                            />} />
+                                    ))
+                                }
+
+                            </Row>
+                        </div>
+
+
 
                         <Row style={{
-                            width: '80%', display: 'flex', alignItems: 'center', justifyContent: 'center',
+                            width: '95%', display: 'flex', alignItems: 'center', justifyContent: 'center',
                             flexDirection: 'row', marginTop: '5vh'
                         }}>
 
@@ -177,13 +220,14 @@ export const SiderApp = () => {
                                     <Button
                                         onClick={() => newFeature(features[index].name, item)}
                                         style={{
-                                            height: '13vh', aspectRatio: '1/1', cursor: 'pointer',
-                                            borderRadius: '1vh', border: `1px solid ${darker(background, 0.8)}`,
+                                            height: '10vh', aspectRatio: '1/1', cursor: 'pointer',
+                                            borderRadius: '2vh', border: `6px solid ${lighter(background, 0.8)}`,
                                             marginBottom: '4%', marginLeft: '2%', marginRight: '2%',
                                             backgroundColor:
                                                 features[index].name === 'Face' ? skin :
-                                                    features[index].color ? item : lighter(background, 0.8),
-                                            display: 'flex', alignItems: 'center', justifyContent: 'center'
+                                                    features[index].color ? item : lighter(background, 0.3),
+                                            display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                            // padding: '5%'
                                             // marginRight:'4%'
                                         }}>
                                         {
@@ -211,8 +255,8 @@ export const SiderApp = () => {
                                         // defaultValue={handleBackground(features[index].name)}
                                         value={handleBackground(features[index].name)}
                                         style={{
-                                            height: '13vh', aspectRatio: '1/1',
-                                            borderRadius: '1vh', border: `1px solid ${lighter(background, 0.8)}`,
+                                            height: '10vh', aspectRatio: '1/1',
+                                            borderRadius: '2vh', border: `6px solid ${lighter(background, 0.8)}`,
                                             marginBottom: '4%', marginLeft: '2%', marginRight: '2%',
                                             backgroundColor: handleBackground(features[index].name),
                                             display: 'flex', alignItems: 'center', justifyContent: 'center'

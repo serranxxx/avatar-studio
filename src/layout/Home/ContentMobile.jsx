@@ -101,12 +101,12 @@ export const ContentMobile = () => {
                     marginBottom: '9vh', // Ajusta este valor para que el contenido no quede detrás del footer
                     // overflowY: 'scroll',
                     // height: 'auto', // Ajusta estos valores según el header y footer
-                    display: 'flex', alignItems: 'center', justifyContent: 'space-around',
-                    flexDirection: 'row',
-                    height:'35vh',
+                    display: 'flex', alignItems: 'center', justifyContent: 'flex-start',
+                    flexDirection: 'column',
+                    height: '45vh',
                     // backgroundColor:'red',
 
-                    background: `radial-gradient(at 50% 50%, rgba(255, 255, 255, 20%), ${`${background}80`})`,
+                    background: darker(background, 0.5)
                     // padding: '2% 5% 2% 5%',
                 }}>
 
@@ -117,53 +117,51 @@ export const ContentMobile = () => {
                     flexDirection: 'column', width: '100%', height: '100%',
                     marginTop: '0vh'
                 }}>
-                    <Row style={{
-                        width: '80%', display: 'flex', alignItems: 'flex-start',
-                        justifyContent: 'space-between', flexDirection: 'row'
+                    <div style={{
+                        width: '100%', backgroundColor: darker(background, 0.6), display: 'flex',
+                        alignItems: 'center', justifyContent: 'center',
+                        borderBottom: `1.5px solid ${darker(background, 0.4)}`
                     }}>
-                        <Button
-                            onClick={previous}
-                            disabled={index === 0 ? true : false}
-                            icon={<MdOutlineArrowBackIosNew size={18} style={{
-                                color: lighter(background, 0.5)
-                            }} />}
-                            style={{
-                                display: 'flex', alignItems: 'center', justifyContent: 'center',
-                                borderRadius: '3vh', backgroundColor: index === 0 ? '#00000010' : darker(background, 0.8),
-                                border: '0px solid #000'
-                            }}
-                        />
-                        {
-                            features ?
-                                <div style={{
-                                    width: '70%', height: '4vh',
-                                    borderRadius: '3vh',
-                                    display: 'flex', alignItems: 'center', justifyContent: 'center',
-                                    backgroundColor: darker(background, 0.8),
-                                    color: lighter(background, 0.5), fontWeight: 'bolder'
-                                }}>
-                                    {features[index].name}
-                                </div>
-                                : <></>
-                        }
-                        <Button
-                            onClick={next}
-                            disabled={index === features.length - 1 ? true : false}
-                            icon={<MdOutlineArrowForwardIos size={18} style={{
-                                color: lighter(background, 0.5)
-                            }} />}
-                            style={{
-                                display: 'flex', alignItems: 'center', justifyContent: 'center',
-                                borderRadius: '3vh',
-                                backgroundColor: index === features.length - 1 ? '#00000010' : darker(background, 0.8),
-                                border: '0px solid #000'
-                            }}
-                        />
+                        <Row style={{
+                            display: 'flex', alignItems: 'center', justifyContent: 'space-around',
+                            flexDirection: 'row', width: '100%',
+                            backgroundColor: 'transparent',
+                            margin: '2vh 0 0 0',
+                            // border: '1px solid red',
+                            padding: '0 8% 0 8%',
 
-                    </Row>
+                        }}>
+                            {
+                                features.map((item) => (
+                                    <Button
+                                        onClick={() => setIndex(item.index)}
+                                        type='ghost'
+                                        style={{
+                                            display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                            marginBottom: '2vh', borderRadius: '0',
+                                            borderBottom: index === item.index ?
+                                                `2px solid ${lighter(background, 0.6)}` : '0px solid #000',
+                                            marginTop: '1vh'
+                                        }}
+                                        icon={<item.icon
+                                            style={{
+                                                color: index === item.index ?
+                                                    lighter(background, 0.6)
+                                                    : `${background}80`,
+                                                marginBottom: '1vh'
+                                            }}
+                                            size={30}
+                                        />} />
+                                ))
+                            }
+
+                        </Row>
+                    </div>
+
+
 
                     <Row style={{
-                        width: '90%', display: 'flex', alignItems: 'center', justifyContent: 'center',
+                        width: '95%', display: 'flex', alignItems: 'center', justifyContent: 'center',
                         flexDirection: 'row', marginTop: '5vh'
                     }}>
 
@@ -173,13 +171,14 @@ export const ContentMobile = () => {
                                 <Button
                                     onClick={() => newFeature(features[index].name, item)}
                                     style={{
-                                        height: '8vh', aspectRatio: '1/1', cursor: 'pointer',
-                                        borderRadius: '1vh', border: `1px solid ${darker(background, 0.8)}`,
+                                        height: '9vh', aspectRatio: '1/1', cursor: 'pointer',
+                                        borderRadius: '2vh', border: `6px solid ${lighter(background, 0.2)}`,
                                         marginBottom: '4%', marginLeft: '2%', marginRight: '2%',
                                         backgroundColor:
                                             features[index].name === 'Face' ? skin :
-                                                features[index].color ? item : lighter(background, 0.8),
-                                        display: 'flex', alignItems: 'center', justifyContent: 'center'
+                                                features[index].color ? item : darker(background, 0.8),
+                                        display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                        // padding: '5%'
                                         // marginRight:'4%'
                                     }}>
                                     {
@@ -187,7 +186,7 @@ export const ContentMobile = () => {
                                             <></>
                                             : <img src={item}
                                                 style={{
-                                                    width: '150%',
+                                                    width: '90%',
                                                     paddingTop: '1%', paddingBottom: '1%'
                                                 }}
                                             />
@@ -207,8 +206,8 @@ export const ContentMobile = () => {
                                     // defaultValue={handleBackground(features[index].name)}
                                     value={handleBackground(features[index].name)}
                                     style={{
-                                        height: '8vh', aspectRatio: '1/1',
-                                        borderRadius: '1vh', border: `1px solid ${lighter(background, 0.8)}`,
+                                        height: '9vh', aspectRatio: '1/1',
+                                        borderRadius: '2vh', border: `6px solid ${lighter(background, 0.2)}`,
                                         marginBottom: '4%', marginLeft: '2%', marginRight: '2%',
                                         backgroundColor: handleBackground(features[index].name),
                                         display: 'flex', alignItems: 'center', justifyContent: 'center'
@@ -218,12 +217,6 @@ export const ContentMobile = () => {
                         }
 
                     </Row>
-
-                    {/* <div style={{
-                            width: '60%', display: 'flex', alignItems: 'center', justifyContent: 'flex-start',
-                        }}>
-                            
-                        </div> */}
 
 
                 </Col>

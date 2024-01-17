@@ -17,18 +17,18 @@ export const HeaderApp = ({
 
     return (
         <>
-            <Header 
-            className='large'
-            style={{
-                position: 'fixed', zIndex: 1, width: '100%',
-                backgroundColor: darker(background, 0.8), backdropFilter: 'blur(16px)',
-                // padding:'0 5% 0 5%',
-                // background: `radial-gradient(at 100% 10%, rgba(255, 255, 255, 20%), red)`,
-                // boxShadow: '10px 0px 10px #00000040',
-                borderBottom: '1px solid #f5f5f510',
-                height: '10vh',
-                alignItems: 'center', justifyContent: 'space-between'
-            }}>
+            <Header
+                className='large'
+                style={{
+                    position: 'fixed', zIndex: 1, width: '100%',
+                    backgroundColor: darker(background, 0.8), backdropFilter: 'blur(16px)',
+                    // padding:'0 5% 0 5%',
+                    // background: `radial-gradient(at 100% 10%, rgba(255, 255, 255, 20%), red)`,
+                    // boxShadow: '10px 0px 10px #00000040',
+                    borderBottom: '1px solid #f5f5f510',
+                    height: '10vh',
+                    alignItems: 'center', justifyContent: 'space-between'
+                }}>
 
                 <p style={{
                     fontWeight: 'bolder', color: lighter(background, 0.5),
@@ -137,23 +137,25 @@ export const HeaderApp = ({
 
             </Header >
 
-            <Header 
-            className='small'
-            style={{
-                position: 'fixed', zIndex: 1, width: '100%',
-                backgroundColor: darker(background, 0.8), backdropFilter: 'blur(16px)',
-                // padding:'0 5% 0 5%',
-                // background: `radial-gradient(at 100% 10%, rgba(255, 255, 255, 20%), red)`,
-                // boxShadow: '10px 0px 10px #00000040',
-                borderBottom: '1px solid #f5f5f510',
-                height: '9vh',
-                alignItems: 'center', justifyContent: 'center'
-            }}>
+            <Header
+                className='small'
+                style={{
+                    position: 'fixed', zIndex: 1, width: '100%',
+                    backgroundColor: darker(background, 0.4), backdropFilter: 'blur(16px)',
+                    // padding:'0 5% 0 5%',
+                    // background: `radial-gradient(at 100% 10%, rgba(255, 255, 255, 20%), red)`,
+                    // boxShadow: '10px 0px 10px #00000040',
+                    borderBottom: '1px solid #f5f5f510',
+                    height: '9vh',
+                    alignItems: 'center', justifyContent: 'center'
+                }}>
 
                 <p style={{
-                    fontWeight: 'bolder', color: lighter(background, 0.7),
-                    fontSize: '1.5em'
-                }}>Avatar Studio Creator</p>
+                    fontWeight: 'lighter', color: lighter(background, 0.7),
+                    fontSize: '2em'
+                }}><b style={{
+                    fontWeight: 600
+                }}>Avatar</b> Studio</p>
 
                 {/* <Row style={{
                     display: 'flex', alignItems: 'center', justifyContent: 'space-around',

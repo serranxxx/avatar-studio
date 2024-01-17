@@ -202,21 +202,21 @@ export const ContentHome = () => {
 
                 <div style={{
                     width: '100%',
-                    marginTop: '9vh',
+                    marginTop: '11vh',
                     display: 'flex', alignItems: 'center',
                     justifyContent: 'center',
                     position: 'relative'
                     // border: '1px solid red'
                     // background: `radial-gradient(at 50% 50%, rgba(255, 255, 255, 20%), ${background})`,
                 }}>
-                    
+
                     <div
                         style={{
                             height: '100%', width: '150px',
                             position: 'relative',
                             // position: 'relative',
                             display: 'flex', alignItems: 'center', justifyContent: 'center',
-                            flexDirection: 'column', marginBottom:'0px'
+                            flexDirection: 'column', marginBottom: '0px'
                         }}>
 
                         <HeadAvatarSmall face={face} skin={skin} hair={hair} color={hair_color} glasses={glasses} hat={hats} beard={beards} beardColor={beards_color} />
@@ -229,9 +229,10 @@ export const ContentHome = () => {
                         backgroundColor: `${background}40`,
                         backdropFilter: 'blur(16px)',
                         border: `2px solid ${background}10`,
-                        padding: '1%',
+                        padding: '3% 1% 3% 1%',
                         position: 'absolute', right: '15px',
-                        bottom: '20px', 
+                        bottom: '20px',
+
                         // zIndex:1,
                         // bottom:'px',
                         display: 'flex', alignItems: 'center', justifyContent: 'space-between',

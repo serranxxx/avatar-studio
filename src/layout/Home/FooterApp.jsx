@@ -18,19 +18,19 @@ export const FooterApp = ({
     return (
         <Footer style={{
             position: 'fixed', zIndex: 1, width: '100%', bottom: 0,
-            backgroundColor: darker(background, 0.8), backdropFilter: 'blur(16px)',
+            backgroundColor: darker(background, 0.4), backdropFilter: 'blur(16px)',
             // padding:'0 5% 0 5%',
             // background: `radial-gradient(at 100% 10%, rgba(255, 255, 255, 20%), red)`,
             // boxShadow: '10px 0px 10px #00000040',
-            borderBottom: '1px solid #f5f5f510', display:'flex',
+            display: 'flex',
             height: '9vh',
             alignItems: 'center', justifyContent: 'center'
         }}>
 
             <Row style={{
-                display: 'flex', alignItems: '', justifyContent: 'center',
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
                 flexDirection: 'row',
-                height: '100%', 
+                height: '100%',
             }}>
                 {
                     location === 'home' ?
@@ -44,7 +44,7 @@ export const FooterApp = ({
                                 display: 'flex', alignItems: 'center', justifyContent: 'center',
                                 borderRadius: '1vh', fontWeight: 'bolder',
                                 backgroundColor: darker(background, 0.5),
-                                border: '0px solid #000', 
+                                border: '0px solid #000',
                                 // height: '40px', width: '40px',
                                 // height:'5vh', aspectRatio:'1/1',
                                 color: lighter(background, 0.5),
