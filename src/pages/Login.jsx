@@ -50,14 +50,11 @@ export const Login = () => {
               color: darker(color, 0.8)
             }}>avatar</p>
             <p style={{
-              margin: '-3vh 0 -5vh 0', fontSize: '4em',
+              margin: '-2vh 0 -5vh 0', fontSize: '4em',
               fontWeight: 'bolder', textAlign: 'left',
-              color: lighter(color, 0.8)
+              color: lighter(color, 0.7)
             }}>studio</p>
-            {/* <p style={{
-              margin: 0, fontSize: '6em',
-              fontWeight: 'bolder', textAlign: 'left'
-            }}>creator</p> */}
+
 
             <Link to="/avatar-studio/home"
             >
@@ -76,10 +73,6 @@ export const Login = () => {
               </Button>
 
             </Link>
-            ˝
-            {/* <img src={texts.title} style={{
-              height: '30vh'
-            }} /> */}
           </Col>
 
 
