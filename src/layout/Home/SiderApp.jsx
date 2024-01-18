@@ -233,12 +233,12 @@ export const SiderApp = () => {
                                         {
                                             features[index].color ?
                                                 <></>
-                                                : <img src={item}
+                                                : item ? <img src={item}
                                                     style={{
                                                         width: '90%',
                                                         paddingTop: '1%', paddingBottom: '1%'
                                                     }}
-                                                />
+                                                /> : <></>
                                         }
 
                                     </Button>
