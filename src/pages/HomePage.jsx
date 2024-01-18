@@ -1,5 +1,5 @@
 import { Layout } from 'antd'
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { HeaderApp } from '../layout/Home/HeaderApp'
 import { ContentHome } from '../layout/Home/ContentHome'
 import { SiderApp } from '../layout/Home/SiderApp'
@@ -34,7 +34,7 @@ export const HomePage = () => {
                 <ContentHome />
 
                 <ContentMobile />
-                <FooterApp location={'home'}/>
+                <FooterApp location={'home'} />
                 {/* <SiderApp /> */}
 
 

@@ -101,11 +101,11 @@ export const SiderApp = () => {
                     : <DoubleLeftOutlined style={{ color: lighter(background, 0.6) }} />}</div>}
             collapsed={collapsed}
             onCollapse={() => setCollapsed(!collapsed)}
-            collapsible
+            // collapsible
             collapsedWidth={50}
-            width={'30%'}
+            width={'40%'}
             style={{
-                backgroundColor: lighter(background, 0.4), transition: 'all 0.25s ease-in-out',
+                backgroundColor: darker(background, 0.9), transition: 'all 0.25s ease-in-out',
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
                 margin: '10vh 0 0vh 0',
                 width: '100%', borderLeft: `0px solid ${darker(background, 0.8)}`
@@ -117,13 +117,14 @@ export const SiderApp = () => {
                 !collapsed ?
                     <Col style={{
                         // width: '100%',
-                        display: 'flex', alignItems: 'center', justifyContent: 'flex-start',
-                        flexDirection: 'column', width: '30vw', height: '100%',
+                        display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+                        flexDirection: 'row', width: '40vw', height: '100%',
                         // marginTop: '5vh'
                     }}>
                         {/* <Row style={{
-                            width: '80%', display: 'flex', alignItems: 'center',
-                            justifyContent: 'space-between', flexDirection: 'row'
+                            width: '90%', display: 'flex', alignItems: 'center',
+                            justifyContent: 'space-between', flexDirection: 'row',
+                            marginTop: '3vh'
                         }}>
                             <Button
                                 onClick={previous}
@@ -139,8 +140,9 @@ export const SiderApp = () => {
                             />
                             {
                                 features ?
+
                                     <div style={{
-                                        width: '80%', height: '4vh',
+                                        width: '60%', height: '4vh',
                                         borderRadius: '3vh',
                                         display: 'flex', alignItems: 'center', justifyContent: 'center',
                                         backgroundColor: darker(background, 0.8),
@@ -166,52 +168,11 @@ export const SiderApp = () => {
 
                         </Row> */}
 
-                        <div style={{
-                            width: '100%', backgroundColor: darker(background, 0.6), display: 'flex',
-                            alignItems: 'center', justifyContent: 'center',
-                            borderBottom: `1.5px solid ${darker(background, 0.9)}`
-                        }}>
-                            <Row style={{
-                                display: 'flex', alignItems: 'center', justifyContent: 'space-around',
-                                flexDirection: 'row', width: '100%',
-                                backgroundColor: 'transparent',
-                                margin: '2vh 0 0 0',
-                                // border: '1px solid red',
-                                padding: '0 8% 0 8%',
-
-                            }}>
-                                {
-                                    features.map((item) => (
-                                        <Button
-                                            onClick={() => setIndex(item.index)}
-                                            type='ghost'
-                                            style={{
-                                                display: 'flex', alignItems: 'center', justifyContent: 'center',
-                                                marginBottom: '2vh', borderRadius: '0',
-                                                borderBottom: index === item.index ?
-                                                    `2px solid ${lighter(background, 0.6)}` : '0px solid #000',
-                                                marginTop: '1vh'
-                                            }}
-                                            icon={<item.icon
-                                                style={{
-                                                    color: index === item.index ?
-                                                        lighter(background, 0.6)
-                                                        : `${background}80`,
-                                                    marginBottom: '1vh'
-                                                }}
-                                                size={item.size}
-                                            />} />
-                                    ))
-                                }
-
-                            </Row>
-                        </div>
-
-
-
                         <Row style={{
-                            width: '95%', display: 'flex', alignItems: 'center', justifyContent: 'center',
-                            flexDirection: 'row', marginTop: '5vh'
+                            width: '80%', display: 'flex', alignItems: 'center', justifyContent: 'center',
+                            flexDirection: 'row',
+                            // marginTop: '5vh',
+                            marginLeft: '2vw'
                         }}>
 
 
@@ -220,8 +181,8 @@ export const SiderApp = () => {
                                     <Button
                                         onClick={() => newFeature(features[index].name, item)}
                                         style={{
-                                            height: '10vh', aspectRatio: '1/1', cursor: 'pointer',
-                                            borderRadius: '2vh', border: `6px solid ${lighter(background, 0.8)}`,
+                                            height: '14vh', aspectRatio: '1/1', cursor: 'pointer',
+                                            borderRadius: '3vh', border: `6px solid ${lighter(background, 0.8)}`,
                                             marginBottom: '4%', marginLeft: '2%', marginRight: '2%',
                                             backgroundColor:
                                                 features[index].name === 'Face' ? skin :
@@ -255,7 +216,7 @@ export const SiderApp = () => {
                                         // defaultValue={handleBackground(features[index].name)}
                                         value={handleBackground(features[index].name)}
                                         style={{
-                                            height: '10vh', aspectRatio: '1/1',
+                                            height: '14vh', aspectRatio: '1/1',
                                             borderRadius: '2vh', border: `6px solid ${lighter(background, 0.8)}`,
                                             marginBottom: '4%', marginLeft: '2%', marginRight: '2%',
                                             backgroundColor: handleBackground(features[index].name),
@@ -266,6 +227,48 @@ export const SiderApp = () => {
                             }
 
                         </Row>
+
+                        <div style={{
+                            width: '10%', backgroundColor: darker(background, 0.6), display: 'flex',
+                            alignItems: 'center', justifyContent: 'center', height: '100%',
+                            borderBottom: `1.5px solid ${darker(background, 0.9)}`
+                        }}>
+                            <Row style={{
+                                display: 'flex', alignItems: 'center', justifyContent: 'space-around',
+                                flexDirection: 'column', width: '100%',
+                                backgroundColor: 'transparent',
+                                margin: '2vh 0 0 0',
+                                // border: '1px solid red',
+                                padding: '0 8% 0 8%',
+
+                            }}>
+                                {
+                                    features.map((item) => (
+                                        <Button
+                                            onClick={() => setIndex(item.index)}
+                                            type='ghost'
+                                            style={{
+                                                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                                marginBottom: '1vh', borderRadius: '1vh',
+                                                backgroundColor: index === item.index ? lighter(background, 0.8) : 'transparent',
+                                                // borderBottom: index === item.index ?
+                                                //     `2px solid ${lighter(background, 0.6)}` : '0px solid #000',
+                                                marginTop: '1vh'
+                                            }}
+                                            icon={<item.icon
+                                                style={{
+                                                    color: index === item.index ?
+                                                        darker(background, 0.6)
+                                                        : `${background}99`,
+                                                    // marginBottom: '1vh'
+                                                }}
+                                                size={item.size}
+                                            />} />
+                                    ))
+                                }
+
+                            </Row>
+                        </div>
 
                         {/* <div style={{
                             width: '60%', display: 'flex', alignItems: 'center', justifyContent: 'flex-start',

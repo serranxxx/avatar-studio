@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { Button, Col, Form, Layout, Row, message } from 'antd';
+import { Button, Col, ColorPicker, Form, Layout, Row, message } from 'antd';
 import { BodyAvatar, HeadAvatar, HeadAvatarSmall } from '../BodyAvatar';
 import { beards, faces, glasses, hairs, hats } from '../hooks/body_parts';
 import { appContext } from '../../context/appContext';
@@ -9,10 +9,13 @@ import { IoSave } from "react-icons/io5";
 import { MdAddReaction } from "react-icons/md";
 import { randomColor, randomFace, randomGlasses, randomHair, randomHats, randomMoustache, randomSkin } from '../../helpers/randoms';
 import { darker, generateUniqueKey, lighter } from '../../helpers/functions';
+import { features } from '../../helpers/features';
 
 const { Content } = Layout;
 
-export const ContentHome = () => {
+export const ContentHome = ({
+
+}) => {
 
     const {
         setSkin, setBackground, data, newData,
@@ -23,6 +26,7 @@ export const ContentHome = () => {
     } = useContext(appContext)
 
     const [avatar, setAvatar] = useState(data)
+
     // const [hairColor, setHairColor] = useState('#995c30')
     // const [beardColor, setbeardColor] = useState('#995c30')
 
@@ -43,12 +47,12 @@ export const ContentHome = () => {
     const newAvatar = () => {
         setFace(faces.face_1)
         setSkin(RandomSkin(Math.floor(Math.random() * 8) + 1))
-        setHair(hairs.hair_0)
+        setHair(null)
         setColorHair('#995c30')
-        setGlasses(glasses.glass_0)
-        setBeards(beards.beard_0)
+        setGlasses(null)
+        setBeards(null)
         setColorBeard('#995c30')
-        setHats(hats.hat_0)
+        // setHats(hats.hat_0)
         setClothes('#ddd')
         setBackground('#bcdde6')
 
@@ -103,7 +107,7 @@ export const ContentHome = () => {
 
                 <div style={{
                     width: '100%',
-                    marginTop: '20vh',
+                    marginTop: '10vh',
                     display: 'flex', alignItems: 'center',
                     justifyContent: 'center',
                     position: 'relative'
@@ -118,9 +122,9 @@ export const ContentHome = () => {
                         border: `2px solid ${background}10`,
                         padding: '1%',
                         position: 'absolute', left: '35px',
-                        top: '40px',
+                        top: '80px',
                         // bottom:'px',
-                        display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+                        display: 'flex', alignItems: 'center', justifyContent: 'space-around',
                         flexDirection: 'column',
                     }}>
                         <Button
@@ -164,7 +168,7 @@ export const ContentHome = () => {
                     </div>
                     <div
                         style={{
-                            height: '100%', width: '350px',
+                            height: '100%', width: '450px',
                             position: 'relative',
                             // position: 'relative',
                             display: 'flex', alignItems: 'center', justifyContent: 'center',
@@ -176,6 +180,8 @@ export const ContentHome = () => {
                     </div>
 
                 </div>
+
+
 
             </Content>
 

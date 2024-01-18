@@ -53,14 +53,15 @@ export const ContentCards = ({
 
         <>
             <Content
-                className='large'
+                className='large scrollable-div'
                 // className='scrollable-div resume-large'
                 style={{
                     marginTop: '15vh', // Ajusta este valor para que el contenido no quede detrás del header
-                    marginBottom: '0vh', // Ajusta este valor para que el contenido no quede detrás del footer
+                    marginBottom: '10vh', // Ajusta este valor para que el contenido no quede detrás del footer
                     overflowY: 'scroll',
                     alignItems: 'flex-start', justifyContent: 'center',
                     flexDirection: 'row',
+                    height: '80vh'
                 }}>
                 <div style={{
                     width: '90%',

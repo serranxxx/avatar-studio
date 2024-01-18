@@ -103,11 +103,11 @@ export const SiderCards = ({
     }, [cardID])
 
     useEffect(() => {
-      if (collapsed) {
-        setBackground('#bcdde6')
-      }
+        if (collapsed) {
+            setBackground('#bcdde6')
+        }
     }, [collapsed])
-    
+
 
 
     return (
@@ -121,20 +121,22 @@ export const SiderCards = ({
                     : <DoubleLeftOutlined style={{ color: lighter(background, 0.6) }} />}</div>}
             collapsed={collapsed}
             onCollapse={() => setCollapsed(!collapsed)}
-            collapsible
+            // collapsible
             collapsedWidth={50}
-            width={'35%'}
+            width={'40%'}
             style={{
                 // backgroundColor: lighter(background, 0.4), 
-                background: 
-                collapsed ? lighter(background,0.4) :
-                card ? 
-                `radial-gradient(at 50% 50%, rgba(255, 255, 255, 20%), ${`${card.background}80`})`
-                : background,
+                background:
+                    collapsed ? lighter(background, 0.4) :
+                        card ?
+                            `radial-gradient(at 50% 50%, rgba(255, 255, 255, 20%), ${`${card.background}80`})`
+                            : background,
                 transition: 'all 0.25s ease-in-out',
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
-                margin: '10vh 0 0vh 0',
-                width: '100%', borderLeft: `0px solid ${card ? darker(card.background, 0.6) : darker(background, 0.9)}`
+                // height: '',
+                // margin: '10vh 0 0vh 0',
+                width: '100%',
+                // borderLeft: `0px solid ${card ? darker(card.background, 0.6) : darker(background, 0.9)}`
 
             }}
         >
@@ -145,12 +147,13 @@ export const SiderCards = ({
                     card ?
                         <div
                             style={{
-                                height: '100%', width: '350px',
+                                height: '100%', width: '450px',
                                 position: 'relative',
+                                marginTop: '5vh',
                                 // position: 'relative',
                                 display: 'flex', alignItems: 'center', justifyContent: 'center',
                                 flexDirection: 'column',
-                                
+
                             }}>
 
                             <HeadAvatar face={card.face} skin={card.skin} hair={card.hair} color={card.hairColor}

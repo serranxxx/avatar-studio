@@ -76,7 +76,7 @@ export const HairAvatar = (props) => {
                 transition: 'all 0.45s ease-in-out',
                 // border: '1px solid red',
                 height: '100%',
-                top: '-38px'
+                top: '-50px'
 
             }}>
             <svg
@@ -112,7 +112,7 @@ export const GlassesAvatar = (props) => {
                 transition: 'all 0.45s ease-in-out',
                 // border: '1px solid red',
                 height: '100%',
-                top: '-10px'
+                top: '-15px'
 
             }}>
 
@@ -170,7 +170,7 @@ export const BeardAvatar = (props) => {
                 transition: 'all 0.45s ease-in-out',
                 // border: '1px solid red',
                 height: '100%',
-                top: '90px', left: `${props.beard === beards.beard_2 ? '68px' : ''}`
+                top: '115px', left: `${props.beard === beards.beard_2 ? '85px' : '2px'}`
 
             }}>
             <svg
