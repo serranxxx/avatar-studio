@@ -45,7 +45,7 @@ export const HeadAvatar = (props) => {
                 <path class="cls-1" d="M256.5,63.5c-.67,0-1.34,0-2,.09V49a49,49,0,0,0-49-49H77A49,49,0,0,0,28,49V62.75a25.18,25.18,0,0,0-3.5-.25,24.5,24.5,0,0,0,0,49,25.18,25.18,0,0,0,3.5-.25v41.29a49,49,0,0,0,49,49H205.54a49,49,0,0,0,49-49V112.41c.66.06,1.33.09,2,.09a24.5,24.5,0,0,0,0-49Z" />
 
             </svg >
-            
+
             <BeardAvatar beard={props.beard} color={props.beardColor} />
             <img style={{
                 position: 'absolute',
@@ -55,7 +55,11 @@ export const HeadAvatar = (props) => {
 
 
             <HairAvatar hair={props.hair} color={props.color} />
-            <GlassesAvatar glasses={props.glasses} />
+            {
+                !props.glasses ?
+                    <></>
+                    : <GlassesAvatar glasses={props.glasses} />
+            }
             {/* <HatsAvatar hat={props.hat} /> */}
         </div>
 
@@ -201,22 +205,29 @@ export const HeadAvatarSmall = (props) => {
             <svg
                 style={{
                     fill: `${props.skin}`, width: '80%',
+                    border: '0px solid red'
                 }}
                 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 281 201.5">
                 <path class="cls-1" d="M256.5,63.5c-.67,0-1.34,0-2,.09V49a49,49,0,0,0-49-49H77A49,49,0,0,0,28,49V62.75a25.18,25.18,0,0,0-3.5-.25,24.5,24.5,0,0,0,0,49,25.18,25.18,0,0,0,3.5-.25v41.29a49,49,0,0,0,49,49H205.54a49,49,0,0,0,49-49V112.41c.66.06,1.33.09,2,.09a24.5,24.5,0,0,0,0-49Z" />
 
             </svg >
-            
+
             <BeardAvatarSmall beard={props.beard} color={props.beardColor} />
             <img style={{
                 position: 'absolute',
-                width: '50%', height: '50%'
+                width: '50%', height: '50%',
+                border: '0px solid red'
             }}
                 src={props.face} />
 
 
             <HairAvatarSmall hair={props.hair} color={props.color} />
-            <GlassesAvatarSmall glasses={props.glasses} />
+            {
+                !props.glasses ?
+                    <></>
+                    : <GlassesAvatarSmall glasses={props.glasses} />
+            }
+
             {/* <HatsAvatarSmall hat={props.hat} /> */}
         </div>
 
@@ -231,6 +242,7 @@ export const HairAvatarSmall = (props) => {
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
                 position: 'absolute', width: '100%',
                 transition: 'all 0.45s ease-in-out',
+                border: '0px solid red',
                 // border: '1px solid red',
                 height: '100%',
                 top: '-16px'
@@ -239,7 +251,7 @@ export const HairAvatarSmall = (props) => {
             <svg
                 style={{
                     fill: `${props.color}`,
-                    width: '100%'
+                    width: '100%', border: '0px solid red'
                 }}
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 352.83 278">
@@ -267,18 +279,25 @@ export const GlassesAvatarSmall = (props) => {
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
                 position: 'absolute', width: '100%',
                 transition: 'all 0.45s ease-in-out',
+                border: '0px solid red',
                 // border: '1px solid red',
                 height: '100%',
                 top: '-5px'
 
             }}>
+            {
+                props.glasses === glasses.glass_0 ?
+                    <></>
+                    : <img style={{
+                        // position: 'absolute',
+                        width: '60%',
+                        border: '0px solid red'
+                        // height: '50%'
+                    }}
+                        src={props.glasses} />
+            }
 
-            <img style={{
-                // position: 'absolute',
-                width: '60%',
-                // height: '50%'
-            }}
-                src={props.glasses} />
+
 
         </div>
 
@@ -325,6 +344,7 @@ export const BeardAvatarSmall = (props) => {
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
                 position: 'absolute', width: '100%',
                 transition: 'all 0.45s ease-in-out',
+                border: '0px solid red',
                 // border: '1px solid red',
                 height: '100%',
                 top: '38px', left: `${props.beard === beards.beard_2 ? '30px' : ''}`
@@ -333,7 +353,7 @@ export const BeardAvatarSmall = (props) => {
             <svg
                 style={{
                     fill: `${props.color}`,
-                    width: '80%'
+                    width: '80%', border: '0px solid red',
                 }}
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 245.52 117.5">

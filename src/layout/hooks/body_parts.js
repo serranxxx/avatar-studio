@@ -35,7 +35,7 @@ export const faces = {
 }
 
 export const hairs = {
-    hair_0: '',
+    hair_0: null,
     hair_1,
     hair_2,
     hair_3,
@@ -43,7 +43,7 @@ export const hairs = {
 }
 
 export const glasses = {
-    glass_0: '',
+    glass_0: null,
     glass_1,
     glass_2,
     glass_3,
@@ -54,7 +54,7 @@ export const glasses = {
 }
 
 export const hats = {
-    hat_0: '',
+    hat_0: null,
     hat_1,
     hat_2,
     hat_3,
@@ -63,7 +63,7 @@ export const hats = {
 }
 
 export const beards = {
-    beard_0 :'',
+    beard_0: null,
     beard_1,
     beard_2
 }
