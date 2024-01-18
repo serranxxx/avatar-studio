@@ -31,9 +31,11 @@ export const HeaderApp = ({
                 }}>
 
                 <p style={{
-                    fontWeight: 'bolder', color: lighter(background, 0.5),
-                    fontSize: '1.5em'
-                }}>Avatar Studio Creator</p>
+                    fontWeight: 'lighter', color: lighter(background, 0.7),
+                    fontSize: '2em'
+                }}><b style={{
+                    fontWeight: 600
+                }}>Avatar</b> Studio</p>
 
                 <Row style={{
                     display: 'flex', alignItems: 'center', justifyContent: 'space-around',
