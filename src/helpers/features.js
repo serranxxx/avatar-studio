@@ -6,6 +6,7 @@ import { IoGlassesOutline } from "react-icons/io5";
 import { TbMoustache } from "react-icons/tb";
 import { TbHanger } from "react-icons/tb";
 import { VscSymbolColor } from "react-icons/vsc";
+import { HiOutlineColorSwatch } from "react-icons/hi";
 
 export const features = [
     {
@@ -14,6 +15,7 @@ export const features = [
         picker: true,
         index: 0,
         icon: VscSymbolColor,
+        size: 25,
         items: [
             '#6e3d39',
             '#8c4b25',
@@ -31,6 +33,7 @@ export const features = [
         picker: false,
         index: 1,
         icon: TbFaceId,
+        size: 25,
         items: [
             faces.face_1,
             faces.face_2,
@@ -43,6 +46,7 @@ export const features = [
         picker: true,
         index: 2,
         icon: GiComb,
+        size: 30,
         items: [
             hairs.hair_0,
             hairs.hair_1,
@@ -56,6 +60,7 @@ export const features = [
         picker: false,
         index: 3,
         icon: IoGlassesOutline,
+        size: 30,
         items: [
             glasses.glass_0,
             glasses.glass_1,
@@ -86,6 +91,7 @@ export const features = [
         picker: true,
         index: 4,
         icon: TbMoustache,
+        size: 30,
         items: [
             beards.beard_0,
             beards.beard_1,
@@ -98,6 +104,7 @@ export const features = [
         picker: true,
         index: 5,
         icon: TbHanger,
+        size: 25,
         items: [
             '#d4afb9',
             '#d1cfe2',
@@ -113,6 +120,7 @@ export const features = [
         picker: true,
         index: 6,
         icon: PiFrameCorners,
+        size: 25,
         items: [
             '#809bce',
             '#95b8d1',

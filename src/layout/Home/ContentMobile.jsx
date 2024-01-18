@@ -84,7 +84,7 @@ export const ContentMobile = () => {
             case 'Background': return background
             case 'Clothes': return clothes
             case 'Hair': return hair_color
-            case 'Beard': return beards_color
+            case 'Beards': return beards_color
             default:
                 break;
         }
@@ -150,7 +150,7 @@ export const ContentMobile = () => {
                                                     : `${background}80`,
                                                 marginBottom: '1vh'
                                             }}
-                                            size={30}
+                                            size={item.size}
                                         />} />
                                 ))
                             }

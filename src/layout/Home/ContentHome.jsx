@@ -8,7 +8,7 @@ import { GiPerspectiveDiceSixFacesRandom } from "react-icons/gi";
 import { IoSave } from "react-icons/io5";
 import { MdAddReaction } from "react-icons/md";
 import { randomColor, randomFace, randomGlasses, randomHair, randomHats, randomMoustache, randomSkin } from '../../helpers/randoms';
-import { darker, generateUniqueKey } from '../../helpers/functions';
+import { darker, generateUniqueKey, lighter } from '../../helpers/functions';
 
 const { Content } = Layout;
 
@@ -226,7 +226,7 @@ export const ContentHome = () => {
                     <div style={{
                         height: '90%', width: '7vh',
                         borderRadius: '3vh',
-                        backgroundColor: `${background}40`,
+                        backgroundColor: darker(background, 0.6),
                         backdropFilter: 'blur(16px)',
                         border: `2px solid ${background}10`,
                         padding: '3% 1% 3% 1%',
@@ -247,7 +247,7 @@ export const ContentHome = () => {
                             }}
                             icon={<GiPerspectiveDiceSixFacesRandom size={25}
                                 style={{
-                                    color: darker(background, 0.7)
+                                    color: lighter(background, 0.7)
                                 }}
                             />} />
 
@@ -260,7 +260,7 @@ export const ContentHome = () => {
                             }}
                             icon={<MdAddReaction size={22}
                                 style={{
-                                    color: darker(background, 0.7)
+                                    color: lighter(background, 0.7)
                                 }} />} />
 
                         <Button
@@ -272,7 +272,7 @@ export const ContentHome = () => {
                             }}
                             icon={<IoSave size={20}
                                 style={{
-                                    color: darker(background, 0.7)
+                                    color: lighter(background, 0.7)
                                 }} />} />
 
 
